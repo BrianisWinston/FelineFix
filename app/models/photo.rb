@@ -18,7 +18,7 @@ class Photo < ApplicationRecord
   has_many :likes,
     dependent: :destroy
 
-  has_many :liked_pics,
+  has_many :people_liked,
     through: :likes,
     source: :user
 end

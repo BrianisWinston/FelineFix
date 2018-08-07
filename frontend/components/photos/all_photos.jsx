@@ -63,7 +63,8 @@ class AllPhotos extends React.Component {
                       </div>
                     </div>
                     <div className="photo-comment-likes">
-                    NO LIKES (yet)</div>
+                    NO LIKES (yet)
+                    </div>
                     <div className="photo-comment-comments">
                       <div className="photo-username">
                         {photo.username}
