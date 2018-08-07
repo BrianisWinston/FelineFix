@@ -4,10 +4,10 @@ import { addLike, deleteLike } from '../../actions/like_actions';
 import Like from './like';
 
 const mapStateToProps = (state, ownProps) => {
-  const photo = state.photos[ownProps.photo_id];
+  const photo = state.photos[ownProps.photoId];
   const likeState = photo.people_liked.includes(state.session.currentUser.username)
   return {
-    likeState
+    likeState,
   };
 };
 

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-responsive-modal';
 import SinglePhoto from './single_photo';
+import LikeContainer from '../likes/like_container';
 
 class AllPhotos extends React.Component {
   constructor(props) {
@@ -63,7 +64,7 @@ class AllPhotos extends React.Component {
                       </div>
                     </div>
                     <div className="photo-comment-likes">
-                    NO LIKES (yet)
+                      <LikeContainer photoId={photo.id} />
                     </div>
                     <div className="photo-comment-comments">
                       <div className="photo-username">
