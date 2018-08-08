@@ -1,14 +1,14 @@
 import React from 'react';
 
 const Like = props => {
-
   const handleLikeAction = () => {
-    const { photoId, deleteLike, addLike } = props;
+    const { photo_id, deleteLike, addLike } = props;
+    console.log(photo_id);
 
     if (props.likeState) {
-      deleteLike(photoId);
+      deleteLike(photo_id);
     } else {
-      addLike(photoId);
+      addLike(photo_id);
     }
   };
 

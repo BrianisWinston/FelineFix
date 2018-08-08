@@ -4,7 +4,7 @@ import { addLike, deleteLike } from '../../actions/like_actions';
 import Like from './like';
 
 const mapStateToProps = (state, ownProps) => {
-  const photo = state.photos[ownProps.photoId];
+  const photo = state.photos[ownProps.photo_id];
   const likeState = photo.people_liked.includes(state.session.currentUser.username);
   return {
     likeState
@@ -12,8 +12,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  addLike: (photoId) => dispatch(addLike(photoId)),
-  deleteLike: (photoId) => dispatch(deleteLike(photoId))
+  addLike: (photo_id) => dispatch(addLike(photo_id)),
+  deleteLike: (photo_id) => dispatch(deleteLike(photo_id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Like);
