@@ -4,7 +4,7 @@ export const ADD_LIKE = 'ADD_LIKE';
 export const REMOVE_LIKE = 'REMOVE_LIKE';
 
 export const addLike = photo_id => dispatch => (
-  LikeApiUtil.addLike(photo_id).then(photo => dispatch(addLike(photo)))
+  LikeApiUtil.addLike(photo_id).then(photo => dispatch(createLike(photo)))
 );
 
 export const deleteLike = photo_id => dispatch => (

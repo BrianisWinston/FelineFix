@@ -13,14 +13,14 @@ const Like = props => {
   };
 
   const classes =
-  `fa fa-lg ${props.likeState ?
-    "fa-heart liked-icon" :
-    "fa-heart-o likes-icon"}`;
+  `${props.likeState ?
+    "fas" :
+    "far"} fa-heart`;
 
   return (
-    <div
-      onClick={handleLikeAction}
-      className={classes} />
+    <div onClick={handleLikeAction} >
+      <i className={classes}></i>
+    </div>
   );
 };
 

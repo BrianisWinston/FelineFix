@@ -59,12 +59,9 @@ class AllPhotos extends React.Component {
                   </div>
                   <div className="photo-comment-section">
                     <div className="photo-comment-icons">
-                      <div>
-                        <i className="fas fa-heart"></i>
-                      </div>
+                        <LikeContainer photoId={photo.id} />
                     </div>
                     <div className="photo-comment-likes">
-                      <LikeContainer photoId={photo.id} />
                     </div>
                     <div className="photo-comment-comments">
                       <div className="photo-username">
