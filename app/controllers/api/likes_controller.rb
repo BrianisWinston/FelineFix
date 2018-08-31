@@ -1,7 +1,7 @@
 class Api::LikesController < ApplicationController
   def create
     @photo = Photo.find(params[:photo_id])
-    @like = current_user.likes.create(photo_id: @photo_id)
+    @like = current_user.likes.create(photo_id: @photo.id)
 
     if @like.save
       render 'api/photos/show'
