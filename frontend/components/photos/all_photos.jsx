@@ -1,0 +1,86 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Modal from 'react-responsive-modal';
+import SinglePhoto from './single_photo';
+
+class AllPhotos extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+      imgModal: "not set yet",
+      caption: "not set yet",
+    };
+
+    this.onOpenModal = this.onOpenModal.bind(this);
+    this.onCloseModal = this.onCloseModal.bind(this);
+  }
+
+  onOpenModal(photo) {
+    this.setState({ open: true });
+    this.setState({ imgModal: photo.img_url })
+    this.setState({ caption: photo.caption })
+  };
+
+  onCloseModal() {
+    this.setState({ open: false });
+  };
+
+  componentDidMount() {
+    this.props.fetchPhotos();
+  }
+
+
+  render () {
+    return (
+      <div className="photo-whole">
+        <ul className="photo-reversed">
+          <Modal open={this.state.open} onClose={this.onCloseModal} center
+            classNames={{ overlay: 'custom-overlay', modal: 'custom-modal' }}>
+            <img src={this.state.imgModal} className="single-img-modal"/>
+          </Modal>
+          { this.props.photos.map((photo, idx)=> (
+              <li key={idx}>
+                <div className="photo-entity">
+                  <div className="photo-header">
+                    <div className="photo-header-info">
+                      <div className="photo-user-icon">
+                        <i className="far fa-user"></i>
+                      </div>
+                      <div className="photo-user">
+                        { photo.username }
+                      </div>
+                    </div>
+                  </div>
+                  <div className="photo-box">
+                    <img className="photo-image" src={photo.img_url} onClick={() => this.onOpenModal(photo)}/>
+
+                  </div>
+                  <div className="photo-comment-section">
+                    <div className="photo-comment-icons">
+                      <div>
+                        <i className="fas fa-heart"></i>
+                      </div>
+                    </div>
+                    <div className="photo-comment-likes">
+                    NO LIKES (yet)</div>
+                    <div className="photo-comment-comments">
+                      <div className="photo-username">
+                        {photo.username}
+                      </div>
+                      <div className="photo-caption">
+                        {photo.caption}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default AllPhotos;
