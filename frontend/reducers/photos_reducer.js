@@ -6,12 +6,12 @@ import merge from 'lodash/merge';
 
 const PhotosReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
-  let newState;
   switch (action.type) {
     case RECEIVE_ALL_PHOTOS:
     console.log('photos reducer')
       return merge({}, action.photos);
     case ADD_LIKE:
+    console.log(oldState);
     case REMOVE_LIKE:
     case RECEIVE_PHOTO:
     console.log('photo reducer');

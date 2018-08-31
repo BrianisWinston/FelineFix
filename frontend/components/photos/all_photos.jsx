@@ -13,7 +13,6 @@ class AllPhotos extends React.Component {
       caption: "not set yet",
     };
 
-    this.onOpenModal = this.onOpenModal.bind(this);
     this.onCloseModal = this.onCloseModal.bind(this);
   }
 
@@ -59,9 +58,7 @@ class AllPhotos extends React.Component {
                   </div>
                   <div className="photo-comment-section">
                     <div className="photo-comment-icons">
-                      <div>
-                        <i className="fas fa-heart"></i>
-                      </div>
+                      <LikeContainer photo_id={photo.id} />
                     </div>
                     <div className="photo-comment-likes">
                     NO LIKES (yet)</div>

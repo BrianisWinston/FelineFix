@@ -4,6 +4,7 @@ import { addLike, deleteLike } from '../../actions/like_actions';
 import Like from './like';
 
 const mapStateToProps = (state, ownProps) => {
+  console.log(state);
   const photo = state.photos[ownProps.photo_id];
   const likeState = photo.people_liked.includes(state.session.currentUser.username);
   return {
