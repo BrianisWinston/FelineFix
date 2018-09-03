@@ -11,6 +11,7 @@ export const deleteLike = photo_id => {
   console.log('delete like ajax');
   return $.ajax({
     method: 'DELETE',
-    url: `api/likes/${photo_id}`
+    url: `api/likes/${photo_id}`,
+    data: { photo_id }
   })
 };

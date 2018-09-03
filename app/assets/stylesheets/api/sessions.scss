@@ -482,12 +482,20 @@ top: 24px;
 
 .photo-comment-icons div{
   position: relative;
-  left: -45.25%;
+  // left: -45.25%;
   top: 10px;
+  width: 40px;
+  height: 35px;
   font-size: 23px;
   color: #eb4856;
 }
 
+.photo-comment-icons div img{
+  position: relative;
+  width: 40px;
+  height: 25px;
+  margin: auto;
+}
 .photo-comment-likes {
   position: relative;
   font-weight: 600;
@@ -679,19 +687,9 @@ top: 24px;
 }
 
 .likes {
-  width: 100px;
-  height: 50px;
-  background-color: lightgrey;
-}
-
-.fas.fa-heart {
-  width: 100px;
-  height: 30px;
-  background-color: lightblue;
-}
-
-.far.fa-heart {
-  width: 100px;
-  height: 30px;
-  background-color: lightblue;
+  position: relative;
+  width: 40px;
+  height: 25px;
+  margin: auto;
+//   background-color: lightgrey;
 }

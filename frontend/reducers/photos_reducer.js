@@ -13,11 +13,19 @@ const PhotosReducer = (oldState = {}, action) => {
     case ADD_LIKE:
       console.log('add like reducer');
       let newshit = merge({}, oldState, {[action.photo.id]: action.photo});
-      console.log(newshit);
+      console.log('old')
+      console.log(oldState[68].people_liked)
+      console.log('new')
+      console.log(newshit[68].people_liked);
       return newshit
     case REMOVE_LIKE:
       console.log('remove like reducer');
-      return merge({}, oldState, {[action.photo.id]: action.photo});
+      let newpoo = merge({}, oldState, {[action.photo.id]: action.photo});
+      console.log('old')
+      console.log(oldState[68].people_liked)
+      console.log('new')
+      console.log(newshit[68].people_liked);
+      return newpoo
     case RECEIVE_PHOTO:
       console.log('photo reducer');
       return merge({}, oldState, {[action.photo.id]: action.photo});

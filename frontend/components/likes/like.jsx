@@ -15,12 +15,13 @@ class Like extends React.Component {
   handleLikeAction() {
     const { photo_id, deleteLike, addLike } = this.props;
     // console.log(photo_id);
-    // console.log(this.state.likeState);
+    console.log(this.props.likeState);
     if (this.props.likeState) {
       deleteLike(photo_id);
     } else {
       addLike(photo_id);
     }
+    console.log(this.props.likeState)
   };
 
   componentWillUpdate(nextProps, nextState) {
@@ -40,10 +41,12 @@ class Like extends React.Component {
 
   render() {
     const {likeState} = this.props;
-    const classes = `${likeState ? "fas" : "far"} fa-heart`;
+    const noLike = "https://image.flaticon.com/icons/svg/149/149219.svg"
+    const yesLike = "https://image.flaticon.com/icons/png/512/148/148838.png"
+    const likeurl = likeState ? yesLike : noLike
     return (
-      <div className="likes" onClick={() => this.handleLikeAction()}>
-        <i className={classes}></i>
+      <div onClick={this.handleLikeAction}>
+        <img src={likeurl}/>
         {this.state.bullshit}
       </div>
     );
