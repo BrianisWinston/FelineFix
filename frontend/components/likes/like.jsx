@@ -6,11 +6,6 @@ class Like extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      classes: `${props.likeState ?
-          "fas" :
-          "far"} fa-heart`,
-          likeState: props.likeState,
-          bullshit: 0
     };
     this.handleLikeAction = this.handleLikeAction.bind(this);
   }
@@ -19,24 +14,36 @@ class Like extends React.Component {
 
   handleLikeAction() {
     const { photo_id, deleteLike, addLike } = this.props;
-    console.log(photo_id);
-    console.log(this.state.likeState);
-    this.setState({bullshit: this.state.bullshit += 1})
-    if (this.state.likeState) {
+    // console.log(photo_id);
+    // console.log(this.state.likeState);
+    if (this.props.likeState) {
       deleteLike(photo_id);
-      this.setState({classes: "far fa-heart"})
     } else {
       addLike(photo_id);
-      this.setState({classes: "fas fa-heart"})
     }
   };
 
+  componentWillUpdate(nextProps, nextState) {
+    // console.log(nextProps);
+    // console.log("aaaaaaa");
+    // console.log(nextState);
+    // const { photo_id, deleteLike, addLike } = this.props;
+    // if (this.state.likeState) {
+    //   deleteLike(photo_id);
+    //   this.setState({classes: "fas fa-heart"})
+    // } else {
+    //   addLike(photo_id);
+    //   this.setState({classes: "far fa-heart"})
+    // }
+  }
 
 
   render() {
+    const {likeState} = this.props;
+    const classes = `${likeState ? "fas" : "far"} fa-heart`;
     return (
       <div className="likes" onClick={() => this.handleLikeAction()}>
-        <i className={this.state.classes}  ></i>
+        <i className={classes}></i>
         {this.state.bullshit}
       </div>
     );
