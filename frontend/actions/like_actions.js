@@ -12,7 +12,11 @@ export const addLike = photo_id => dispatch => {
 export const deleteLike = photo_id => dispatch => {
   console.log('delete like actions');
 
-  LikeApiUtil.deleteLike(photo_id).then(photo => dispatch(removeLike(photo)));
+  LikeApiUtil.deleteLike(photo_id).then(photo => {
+    console.log(photo);
+    console.log(photo.people_liked);
+  }).then(photo => dispatch(removeLike(photo))
+  );
 };
 
 const createLike = photo => ({

@@ -1,7 +1,7 @@
 import { RECEIVE_ALL_PHOTOS,
          RECEIVE_PHOTO,
          REMOVE_PHOTO } from '../actions/photo_actions';
-import { ADD_LIKE, REMOVE_LIKE} from '../actions/like_actions';
+import { ADD_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
 
 const PhotosReducer = (oldState = {}, action) => {
@@ -25,6 +25,7 @@ const PhotosReducer = (oldState = {}, action) => {
       console.log(oldState[68].people_liked)
       console.log('new')
       console.log(newpoo[68].people_liked);
+      return newpoo
     case RECEIVE_PHOTO:
       console.log('photo reducer');
       return merge({}, oldState, {[action.photo.id]: action.photo});

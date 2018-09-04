@@ -13,7 +13,7 @@ class Api::LikesController < ApplicationController
   def destroy
     @like = current_user.likes.find_by(photo_id: params[:id])
     puts "hhhhhhhhhhhhhhhhhh"
-    puts current_user.likes.find_by(photo_id: params[:id])
+    puts current_user.likes
     @photo = Photo.find(@like.photo_id)
     puts @photo
     if @like.destroy!

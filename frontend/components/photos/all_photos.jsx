@@ -61,7 +61,8 @@ class AllPhotos extends React.Component {
                       <LikeContainer photo_id={photo.id} />
                     </div>
                     <div className="photo-comment-likes">
-                    NO LIKES (yet)</div>
+                      {photo.people_liked.length}
+                    </div>
                     <div className="photo-comment-comments">
                       <div className="photo-username">
                         {photo.username}
