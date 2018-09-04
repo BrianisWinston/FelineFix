@@ -21,6 +21,7 @@ const PhotosReducer = (oldState = {}, action) => {
     case REMOVE_LIKE:
       console.log('remove like reducer');
       let newpoo = merge({}, oldState, {[action.photo.id]: action.photo});
+      newpoo[action.photo.id] = action.photo;
       console.log('old')
       console.log(oldState[68].people_liked)
       console.log('new')
