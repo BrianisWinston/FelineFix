@@ -1,5 +1,4 @@
 export const addLike = photo_id => {
-  console.log('add like ajax');
   return $.ajax({
     method: 'POST',
     url: 'api/likes',
@@ -8,7 +7,6 @@ export const addLike = photo_id => {
 };
 
 export const deleteLike = photo_id => {
-  console.log('delete like ajax');
   return $.ajax({
     method: 'DELETE',
     url: `api/likes/${photo_id}`

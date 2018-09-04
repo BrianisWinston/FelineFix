@@ -3,7 +3,6 @@ import * as PhotoApiUtil from '../util/photo';
 export const RECEIVE_ALL_PHOTOS = "RECEIVE_ALL_PHOTOS";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 export const REMOVE_PHOTO = "REMOVE_PHOTO";
-console.log('In fetchPhoto action');
 
 export const fetchPhotos = () => dispatch => (
   PhotoApiUtil.fetchPhotos().then(photos => dispatch(receiveAllPhotos(photos)))

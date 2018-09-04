@@ -8,27 +8,15 @@ const PhotosReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_ALL_PHOTOS:
-      console.log('photos reducer')
       return merge({}, action.photos);
     case ADD_LIKE:
-      console.log('add like reducer');
-      let newshit = merge({}, oldState, {[action.photo.id]: action.photo});
-      console.log('old')
-      console.log(oldState[54].people_liked)
-      console.log('new')
-      console.log(newshit[54].people_liked);
-      return newshit
+      let newlike = merge({}, oldState, {[action.photo.id]: action.photo});
+      return newlike
     case REMOVE_LIKE:
-      console.log('remove like reducer');
-      let newpoo = merge({}, oldState, {[action.photo.id]: action.photo});
-      newpoo[action.photo.id] = action.photo;
-      console.log('old')
-      console.log(oldState[54])
-      console.log('new')
-      console.log(newpoo[54]);
-      return newpoo
+      let newlike = merge({}, oldState, {[action.photo.id]: action.photo});
+      newlike[action.photo.id] = action.photo;
+      return newlike
     case RECEIVE_PHOTO:
-      console.log('photo reducer');
       return merge({}, oldState, {[action.photo.id]: action.photo});
     case REMOVE_PHOTO:
       let newState = merge({}, oldState);

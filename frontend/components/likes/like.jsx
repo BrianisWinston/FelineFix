@@ -14,14 +14,11 @@ class Like extends React.Component {
 
   handleLikeAction() {
     const { photo_id, deleteLike, addLike } = this.props;
-    // console.log(photo_id);
-    console.log(this.props.likeState);
     if (this.props.likeState) {
       deleteLike(photo_id);
     } else {
       addLike(photo_id);
     }
-    console.log(this.props.likeState)
   };
 
   componentWillUpdate(nextProps, nextState) {
