@@ -485,17 +485,28 @@ top: 24px;
   // left: -45.25%;
   top: 10px;
   width: 40px;
-  height: 35px;
+  height: 25px;
   font-size: 23px;
   color: #eb4856;
 }
 
 .photo-comment-icons div img{
   position: relative;
-  width: 40px;
-  height: 25px;
+  width: 25px;
+  // height: 25px;
   margin: auto;
+  left: 7px;
 }
+
+.photo-comment-icons div img:hover{
+  position: relative;
+  width: 25px;
+  // height: 25px;
+  margin: auto;
+  left: 7px;
+  cursor: pointer;
+}
+
 .photo-comment-likes {
   position: relative;
   font-weight: 600;

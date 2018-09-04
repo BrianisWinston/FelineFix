@@ -12,9 +12,15 @@ class Api::LikesController < ApplicationController
 
   def destroy
     @like = current_user.likes.find_by(photo_id: params[:id])
+    puts "hhhhhhhhhhhhhhhhhh"
+    puts current_user.likes.find_by(photo_id: params[:id])
     @photo = Photo.find(@like.photo_id)
-    @like.destroy!
-    render 'api/photos/show'
+    puts @photo
+    if @like.destroy!
+      render 'api/photos/show'
+    else
+     render json: @like.errors.full_messages
+    end
   end
 
   def like_params

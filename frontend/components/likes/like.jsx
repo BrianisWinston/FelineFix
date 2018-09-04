@@ -46,7 +46,7 @@ class Like extends React.Component {
     const likeurl = likeState ? yesLike : noLike
     return (
       <div onClick={this.handleLikeAction}>
-        <img src={likeurl}/>
+        <img src={likeurl} width="90" height="90"/>
         {this.state.bullshit}
       </div>
     );

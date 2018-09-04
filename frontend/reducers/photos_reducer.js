@@ -24,8 +24,7 @@ const PhotosReducer = (oldState = {}, action) => {
       console.log('old')
       console.log(oldState[68].people_liked)
       console.log('new')
-      console.log(newshit[68].people_liked);
-      return newpoo
+      console.log(newpoo[68].people_liked);
     case RECEIVE_PHOTO:
       console.log('photo reducer');
       return merge({}, oldState, {[action.photo.id]: action.photo});
