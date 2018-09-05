@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-responsive-modal';
 import SinglePhoto from './single_photo';
 import LikeContainer from '../likes/like_container';
+import LikeCount from '../likes/like_count';
 
 class AllPhotos extends React.Component {
   constructor(props) {
@@ -27,11 +28,12 @@ class AllPhotos extends React.Component {
   };
 
   componentDidMount() {
-    this.props.fetchPhotos();
+    let list = this.props.fetchPhotos();
   }
 
 
   render () {
+
     return (
       <div className="photo-whole">
         <ul className="photo-reversed">
