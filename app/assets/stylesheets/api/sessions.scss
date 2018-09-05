@@ -13,7 +13,9 @@
 //   height: 100%;
 // }
 
-
+#root {
+  background-color: #fafafa;
+}
 
 .iPhone-img {
   display: inline-block;
@@ -22,6 +24,16 @@
   width: 433px;
   background-image: image-url("large_kitty-cat.png");
 }
+
+// HOME CONTAINER ----------------------------------------------------
+
+// .homediv header {
+//   position: relative;
+//   width:100px;
+//   height:100px;
+//   background-color: red;
+// }
+
 //LOGIN CONTAINER ---------------------------------------------------
 
 .login-start {
@@ -322,18 +334,16 @@
   float: right;
   position: relative;
   text-align: center;
-  background: #3897f0;
-  border-color: #3897f0;
-  color: #fff;
+  /* background: #3897f0; */
+  /* border-color: #3897f0; */
+  color: #3897f0;
   font-size: 14px;
   font-weight: 600;
   line-height: 26px;
-  // white-space: nowrap;
   border-radius: 3px;
   border-style: solid;
   width: 61px;
   height: 26px;
-  // margin: 15px 0px;
   padding-left: 8px;
   padding-right: 8px;
 }
