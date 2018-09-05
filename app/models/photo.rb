@@ -21,4 +21,8 @@ class Photo < ApplicationRecord
   has_many :people_liked,
     through: :likes,
     source: :user
+
+  has_many :comments,
+    class_name: :Comment,
+    foreign_key: :photo_id
 end
