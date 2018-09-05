@@ -16,8 +16,8 @@ const LikeCount = ({photo, likeState}) => {
     // console.log(likeState);
   } else {
     likeStatus = `${photo.people_liked.length} likes`;
-    console.log(photo.people_liked.length);
-    console.log(likeState);
+    // console.log(photo.people_liked.length);
+    // console.log(likeState);
   };
 
   return (
