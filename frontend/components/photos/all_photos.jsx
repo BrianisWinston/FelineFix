@@ -62,9 +62,7 @@ class AllPhotos extends React.Component {
                     <div className="photo-comment-icons">
                       <LikeContainer photo_id={photo.id} />
                     </div>
-                    <div className="photo-comment-likes">
-                      <LikeCount photo={photo}/>
-                    </div>
+                    <LikeCount photo={photo}/>
                     <div className="photo-comment-comments">
                       <div className="photo-username">
                         {photo.username}
