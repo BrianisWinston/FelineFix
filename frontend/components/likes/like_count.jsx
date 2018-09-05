@@ -10,7 +10,7 @@ const LikeCount = ({photo, likeState}) => {
     likeStatus = "1 like"
   } else if (photo.people_liked.length === 2 && likeState) {
     likeStatus = "Liked by you and 1 other"
-  } else if (likeState && photo.people_liked.length < 2) {
+  } else if (likeState && photo.people_liked.length > 2) {
     likeStatus = `Liked by you and ${photo.people_liked.length - 1} others`
     // console.log(photo.people_liked.length);
     // console.log(likeState);
