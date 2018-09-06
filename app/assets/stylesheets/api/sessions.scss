@@ -470,6 +470,7 @@ top: 24px;
   width: 100%;
   height: 100%;
   cursor: pointer;
+  object-fit: contain;
 }
 
 .photo-user {
@@ -704,6 +705,8 @@ top: 24px;
   width: 600px;
   height: 500px;
   margin: -16px;
+  object-fit: contain;
+  background-color: white;
   // opacity: 1.0;
 }
 
