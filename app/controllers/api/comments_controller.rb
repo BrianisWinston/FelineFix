@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-  before_action :require_logged_in
+  before_action :require_login
 
   def index
     @photo = Photo.find(params[:photo_id])
@@ -19,7 +19,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find_by(id: params[:id])
+    @comment = Comment.find(params[:id])
     @comment.destroy
     render :destroy
   end

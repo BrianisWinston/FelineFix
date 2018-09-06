@@ -1,4 +1,6 @@
 class Api::LikesController < ApplicationController
+  before_action :require_login
+
   def create
     @photo = Photo.find(params[:photo_id])
     @like = current_user.likes.create(photo_id: @photo.id)

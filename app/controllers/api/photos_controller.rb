@@ -41,8 +41,6 @@ class Api::PhotosController < ApplicationController
   end
 
   def destroy
-    p "===================================="
-    p params
     photo = Photo.find(params[:id])
     photo.destroy
   end
