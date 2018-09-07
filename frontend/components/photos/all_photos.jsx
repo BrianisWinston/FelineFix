@@ -4,6 +4,7 @@ import Modal from 'react-responsive-modal';
 import SinglePhoto from './single_photo';
 import LikeContainer from '../likes/like_container';
 import LikeCount from '../likes/like_count';
+import CommentContainer from '../comments/comment_container';
 
 class AllPhotos extends React.Component {
   constructor(props) {
@@ -70,6 +71,7 @@ class AllPhotos extends React.Component {
                       <div className="photo-caption">
                         {photo.caption}
                       </div>
+                      <CommentContainer photo={photo}/>
                     </div>
                   </div>
                 </div>
