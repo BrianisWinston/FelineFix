@@ -1,3 +1,2 @@
-json.photo do
-  json.partial! 'api/photos/photo', photo: @comment.photo
-end
+json.extract! comment, :id, :photo_id, :user_id, :body
+json.username comment.user.username
