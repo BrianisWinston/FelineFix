@@ -5,7 +5,7 @@ export const fetchComments = photo => (
   });
 );
 
-export const createComments = photo => (
+export const createComment = photo => (
   $.ajax({
     method: 'POST',
     url: `/api/comments/${photo.id}/comments`,
