@@ -2,17 +2,15 @@ export const fetchComments = photo => (
   $.ajax({
     method: 'GET',
     url: `/api/photos/${photo.id}/comments`
-  });
+  })
 );
 
-export const createComment = photo => (
+export const createComment = comment => (
   $.ajax({
     method: 'POST',
     url: `/api/comments/${photo.id}/comments`,
-    data: {
-      body: {photo.body}
-    }
-  });
+    data: { comment }
+  })
 );
 
 export const deleteComment = id => (
