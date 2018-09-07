@@ -25,8 +25,8 @@ export const fetchComments = photoId => dispatch => (
 
 export const createComment = comment => dispatch => (
   CommentAPIUtil.createComment(comment).then(comment => dispatch(addComment(comment)))
-)
+);
 
 export const deleteComment = commentId => dispatch => (
   CommentAPIUtil.deleteComment(commentId) => (photo => dispatch(removeComment(photo)))
-)
+);
