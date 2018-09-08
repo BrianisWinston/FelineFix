@@ -39,7 +39,7 @@ class UploadButton extends React.Component {
     let newPhoto = { img_url: this.state.createdPhoto, caption: captionValue };
     this.props.createPhoto(newPhoto);
     this.closeModal();
-    this.setState({createPhoto: "", caption: ""})
+    this.setState({createdPhoto: "", caption: ""})
   }
 
   upload(e) {
