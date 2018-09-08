@@ -13,6 +13,20 @@
 //   height: 100%;
 // }
 
+html, body {
+  margin: 0;
+
+    padding: 0;
+
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 100%;
+    height: 100%;
+    max-height: 100%;
+}
+
 #root {
   background-color: #fafafa;
   position: inherit;
@@ -23,7 +37,8 @@
 .background {
   // position: absolute;
   // width: 100%;
-  // height: 100%;
+  // height: 100%
+  overflow: -webkit-paged-y;;
   background-color: #fafafa;
 }
 
@@ -747,6 +762,7 @@ top: 24px;
   height: 50px;
   top: 235px;
   text-transform: uppercase;
+  background-color: #fafafa;
 }
 
 .links a {
@@ -759,5 +775,4 @@ top: 24px;
   width: 7.25rem;
   color: #033569;
   font-size: 14px;
-  background-color: #fafafa;
 }

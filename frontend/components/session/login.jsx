@@ -55,39 +55,52 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="login-start">
-        <div className="iPhone-img">
-        </div>
-        <div className="login-form">
-          <form className="form">
-            <div className="logo">
-              FelineFix
+      <div>
+        <div className="login-start">
+          <div className="iPhone-img">
+          </div>
+          <div className="login-form">
+            <form className="form">
+              <div className="logo">
+                FelineFix
+              </div>
+              <input
+                className="login-input-dis"
+                type="text"
+                placeholder="Username"
+                value={this.state.username}
+                onChange={this.handleInput('username')}
+              />
+              <input
+                className="login-input-dis"
+                type="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handleInput('password')}
+              />
+            <div className="button-1">
+              <button onClick={this.handleSubmit}>Log in</button>
             </div>
-            <input
-              className="login-input-dis"
-              type="text"
-              placeholder="Username"
-              value={this.state.username}
-              onChange={this.handleInput('username')}
-            />
-            <input
-              className="login-input-dis"
-              type="password"
-              placeholder="Password"
-              value={this.state.password}
-              onChange={this.handleInput('password')}
-            />
-          <div className="button-1">
-            <button onClick={this.handleSubmit}>Log in</button>
+            <div className="button-2">
+              <button onClick={this.demoHandleSubmit}>Demo User</button>
+            </div>
+            {this.renderErrors()}
+            <LoginItem className="logout-button" currentUser={this.props.currentUser} logout={this.props.logout} />
+            </form>
           </div>
-          <div className="button-2">
-            <button onClick={this.demoHandleSubmit}>Demo User</button>
-          </div>
-          {this.renderErrors()}
-          <LoginItem className="logout-button" currentUser={this.props.currentUser} logout={this.props.logout} />
-          </form>
         </div>
-      </div>)
+        <div className="links">
+          <div></div>
+          <a href="https://github.com/BrianisWinston" target="_blank">github</a>
+          <a href="https://www.linkedin.com/in/winston-galas-96ab3ba3/" target="_blank">linkedin</a>
+          <a href="https://www.youtube.com/channel/UCI6i2KM7XBZct1CmtZtUC5A?view_as=subscriber" target="_blank">vlog</a>
+          <a href="https://brianiswinston.github.io/PortfolioWebsite/" target="_blank">portfolio</a>
+          <a href="https://www.facebook.com/brianiswinston" target="_blank">facebook</a>
+          <a href="https://www.instagram.com/winstonisbrian/" target="_blank">instagram</a>
+          <a href="https://twitter.com/brianiswinston?lang=en" target="_blank">twitter</a>
+        </div>
+      </div>
+    )
   }
 }
 
