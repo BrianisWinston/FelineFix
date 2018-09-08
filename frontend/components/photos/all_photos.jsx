@@ -5,6 +5,7 @@ import SinglePhoto from './single_photo';
 import LikeContainer from '../likes/like_container';
 import LikeCount from '../likes/like_count';
 import CommentContainer from '../comments/comment_container';
+import DeletePhoto from './delete_photo';
 
 class AllPhotos extends React.Component {
   constructor(props) {
@@ -34,7 +35,6 @@ class AllPhotos extends React.Component {
 
 
   render () {
-
     return (
       <div className="photo-whole">
         <ul className="photo-reversed">
@@ -53,6 +53,7 @@ class AllPhotos extends React.Component {
                       <div className="photo-user">
                         { photo.username }
                       </div>
+                      <DeletePhoto deletePhoto={this.props.deletePhoto} photo={photo} currentUser={this.props.currentUser}/>
                     </div>
                   </div>
                   <div className="photo-box">
