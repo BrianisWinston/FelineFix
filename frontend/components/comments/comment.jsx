@@ -8,8 +8,7 @@ class CommentComponent extends React.Component {
 
   render() {
     return (
-      <div className="comments">
-        hellooooooo
+      <div >
       </div>
     )
   }
