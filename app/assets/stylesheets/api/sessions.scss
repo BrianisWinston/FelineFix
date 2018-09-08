@@ -56,9 +56,9 @@
 }
 
 .signupstart {
-  position: absolute;
-  width: 1000px;
-  height: 451px;
+  position: relative;
+  width: 100%;
+  height: 100%;
   top: 100px;
   margin: auto;
 }
@@ -205,7 +205,7 @@
   width: 348px;
   padding: 10px 0px;
   position: relative;
-  top: 42px;
+  // top: 42px;
   left: -12px;
 }
 

@@ -54,9 +54,6 @@ class Login extends React.Component {
   }
 
   render() {
-    if (this.props.currentUser) {
-        return <Redirect to="/home" />
-  } else {
     return (
       <div className="login-start">
         <div className="iPhone-img">
@@ -91,7 +88,6 @@ class Login extends React.Component {
           </form>
         </div>
       </div>)
-    };
   }
 }
 

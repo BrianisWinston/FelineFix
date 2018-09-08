@@ -6,7 +6,7 @@ export default ({ currentUser, logout }) => {
     <header>
       <div className="btn-box">
         <p className="btn">
-          Don't have an account? <Link className="signup-link" to="/signup">Sign Up</Link>
+          Don't have an account? <Link className="signup-link" to="/">Sign Up</Link>
         </p>
       </div>
     </header>
