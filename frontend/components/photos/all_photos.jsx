@@ -53,8 +53,8 @@ class AllPhotos extends React.Component {
                       <div className="photo-user">
                         { photo.username }
                       </div>
-                      <DeletePhoto deletePhoto={this.props.deletePhoto} photo={photo} currentUser={this.props.currentUser}/>
                     </div>
+                    <DeletePhoto deletePhoto={this.props.deletePhoto} photo={photo} currentUser={this.props.currentUser}/>
                   </div>
                   <div className="photo-box">
                     <img className="photo-image" src={photo.img_url} onClick={() => this.onOpenModal(photo)}/>
