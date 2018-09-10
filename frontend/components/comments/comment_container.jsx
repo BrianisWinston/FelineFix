@@ -8,7 +8,7 @@ import CommentComponent from './comment';
 const mapStateToProps = (state, ownProps) => {
   const whasgood = {
     photo: ownProps.photo,
-    currentUser: ownProps.currentUser
+    currentUser: ownProps.currentUser,
   }
   return whasgood;
 };
