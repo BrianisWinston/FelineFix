@@ -72,7 +72,7 @@ class AllPhotos extends React.Component {
                       <div className="photo-caption">
                         {photo.caption}
                       </div>
-                      <CommentContainer photo={photo}/>
+                      <CommentContainer photo={photo} currentUser={this.props.currentUser}/>
                     </div>
                   </div>
                 </div>

@@ -10,8 +10,6 @@ class Like extends React.Component {
     this.handleLikeAction = this.handleLikeAction.bind(this);
   }
 
-
-
   handleLikeAction() {
     const { photo_id, deleteLike, addLike } = this.props;
     if (this.props.likeState) {
@@ -20,21 +18,6 @@ class Like extends React.Component {
       addLike(photo_id);
     }
   };
-
-  componentWillUpdate(nextProps, nextState) {
-    // console.log(nextProps);
-    // console.log("aaaaaaa");
-    // console.log(nextState);
-    // const { photo_id, deleteLike, addLike } = this.props;
-    // if (this.state.likeState) {
-    //   deleteLike(photo_id);
-    //   this.setState({classes: "fas fa-heart"})
-    // } else {
-    //   addLike(photo_id);
-    //   this.setState({classes: "far fa-heart"})
-    // }
-  }
-
 
   render() {
     const {likeState} = this.props;
