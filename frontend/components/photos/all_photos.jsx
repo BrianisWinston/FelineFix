@@ -43,40 +43,42 @@ class AllPhotos extends React.Component {
             <img src={this.state.imgModal} className="single-img-modal"/>
           </Modal>
           { this.props.photos.map((photo, idx)=> (
-              <li key={idx}>
-                <div className="photo-entity">
-                  <div className="photo-header">
-                    <div className="photo-header-info">
-                      <div className="photo-user-icon">
-                        <i className="far fa-user"></i>
+              <div>
+                <li key={idx}>
+                  <div className="photo-entity">
+                    <div className="photo-header">
+                      <div className="photo-header-info">
+                        <div className="photo-user-icon">
+                          <i className="far fa-user"></i>
+                        </div>
+                        <div className="photo-user">
+                          { photo.username }
+                        </div>
                       </div>
-                      <div className="photo-user">
-                        { photo.username }
-                      </div>
+                      <DeletePhoto deletePhoto={this.props.deletePhoto} photo={photo} currentUser={this.props.currentUser}/>
                     </div>
-                    <DeletePhoto deletePhoto={this.props.deletePhoto} photo={photo} currentUser={this.props.currentUser}/>
-                  </div>
-                  <div className="photo-box">
-                    <img className="photo-image" src={photo.img_url} onClick={() => this.onOpenModal(photo)}/>
+                    <div className="photo-box">
+                      <img className="photo-image" src={photo.img_url} onClick={() => this.onOpenModal(photo)}/>
 
-                  </div>
-                  <div className="photo-comment-section">
-                    <div className="photo-comment-icons">
-                      <LikeContainer photo_id={photo.id} />
                     </div>
-                    <LikeCount photo={photo}/>
-                    <div className="photo-comment-comments">
-                      <div className="photo-username">
-                        {photo.username}
+                    <div className="photo-comment-section">
+                      <div className="photo-comment-icons">
+                        <LikeContainer photo_id={photo.id} />
                       </div>
-                      <div className="photo-caption">
-                        {photo.caption}
+                      <LikeCount photo={photo}/>
+                      <div className="photo-comment-comments">
+                        <div className="photo-username">
+                          {photo.username}
+                        </div>
+                        <div className="photo-caption">
+                          {photo.caption}
+                        </div>
                       </div>
-                      <CommentContainer photo={photo} currentUser={this.props.currentUser}/>
                     </div>
                   </div>
-                </div>
-              </li>
+                </li>
+                <CommentContainer photo={photo} currentUser={this.props.currentUser}/>
+              </div>
             ))
           }
         </ul>

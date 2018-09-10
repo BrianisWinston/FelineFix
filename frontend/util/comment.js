@@ -1,13 +1,13 @@
-export const fetchComments = photoId => (
-  $.ajax({
+export const fetchComments = photoId => {
+  // console.log('comment util');
+  return $.ajax({
     method: 'GET',
     url: `/api/photos/${photoId}/comments`,
-    data: {photoId}
   })
-);
+};
 
 export const createComment = comment => {
-  console.log(comment);
+  // console.log(comment);
   return $.ajax({
     method: 'POST',
     url: `/api/photos/${comment.photoId}/comments`,

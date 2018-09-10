@@ -19,9 +19,16 @@ const removeComment = photo => ({
   photo
 })
 
-export const fetchComments = photoId => dispatch => (
-  CommentAPIUtil.fetchComments(photoId).then(comments => dispatch(addComments(comments)))
-);
+export const fetchComments = photoId => dispatch => {
+  // console.log('comment actions');
+  return CommentAPIUtil.fetchComments(photoId)
+  .then(comments => {
+    // console.log(photoId);
+    // console.log(comments);
+    return comments;
+  })
+  .then(comments => dispatch(addComments(comments)));
+};
 
 export const createComment = comment => dispatch => (
   CommentAPIUtil.createComment(comment).then(photo => dispatch(addComment(photo)))

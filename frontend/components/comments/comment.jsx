@@ -30,7 +30,9 @@ class CommentComponent extends React.Component {
   }
 
   renderComments() {
+    // console.log('comment component');
     let newComments = this.props.fetchComments(this.state.photoId);
+    console.log('comment componenet');
     console.log(newComments);
     // newComments = newComments.map( comment => {
     //     return (
@@ -40,7 +42,7 @@ class CommentComponent extends React.Component {
     //     );
     //   }
     // )
-
+    //
     // return newComments
   }
 
@@ -49,9 +51,7 @@ class CommentComponent extends React.Component {
     return (
       <div className="comments">
         <ul>
-          <li>
-            // {this.props.comments}
-          </li>
+          // {comments}
         </ul>
         <form className="comments-submit" onSubmit={this.handleSubmit}>
           <input
