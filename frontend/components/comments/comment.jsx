@@ -9,11 +9,11 @@ class CommentComponent extends React.Component {
       userId: this.props.currentUser,
       body: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    console.log(this.state.photo.id);
-    let newComments = this.props.fetchComments(this.state.photo.id);
+    // let newComments = this.props.fetchComments(this.state.photo.id);
     // this.setState({comments: newComments})
   }
 
@@ -29,10 +29,30 @@ class CommentComponent extends React.Component {
     )
   }
 
+  renderComments() {
+    let newComments = this.props.fetchComments(this.state.photoId);
+    // newComments = newComments.map( comment => {
+    //     return (
+    //       <li>
+    //         {comment}
+    //       </li>
+    //     );
+    //   }
+    // )
+
+    // return newComments
+  }
+
   render() {
-    console.log(this.state.username);
+    console.log('yeeee');
+    console.log(this.state.photoId);
+    console.log(this.state.userId);
+    const comments = this.renderComments()
     return (
       <div className="comments">
+        <ul>
+          {comments}
+        </ul>
         <form className="comments-submit" onSubmit={this.handleSubmit}>
           <input
             className=""
@@ -41,10 +61,9 @@ class CommentComponent extends React.Component {
             value={this.state.body}
             onChange={this.update('body')}
             />
-          <input
-            className="comments-submit"
-            type="submit"
-            />
+          <div className='comments-submit-btn'>
+            <input type='submit'/>
+          </div>
         </form>
       </div>
     )
