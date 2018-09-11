@@ -11,12 +11,15 @@ const mapStateToProps = (state, ownProps) => {
   // console.log(ownProps.photo.id);
   let newComments = [];
   let newUsers = [];
-  ownProps.comments.forEach(obj => {
-    if (obj.photo_id === ownProps.photo.id) {
+  if (state.comments[ownProps.photo.id] !== undefined) {
+    Object.values(state.comments[ownProps.photo.id]).forEach(obj => {
       newComments.push(obj.body);
       newUsers.push(obj.username);
-    }
-  });
+    });
+  }
+  // if (state.comments[ownProps.photo.id] !== undefined) {
+  //   console.log(Object.values(state.comments[ownProps.photo.id]));
+  // }
   // console.log(`new comments ${newComments}`);
   // console.log(`new userss ${newUsers}`);
   const commentState = {
@@ -25,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
     comments: newComments,
     usersOfComments: newUsers
   }
-  // console.log(commentState);
+  console.log(commentState);
   return commentState;
   // return Object.values(state.comments);
 };

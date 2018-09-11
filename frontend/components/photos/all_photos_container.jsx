@@ -5,7 +5,7 @@ import AllPhotos from './all_photos';
 
 const mapStateToProps = (state) => {
   // console.log('photo container')
-  // console.log(Object.values(state.comments));
+  // console.log(state);
   return {
   currentUser: state.session.currentUser,
   photos: Object.values(state.photos),

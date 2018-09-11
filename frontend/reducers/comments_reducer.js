@@ -11,10 +11,16 @@ const CommentsReducer = (oldState = {}, action) => {
       // console.log('comments reducer');
       return merge({}, oldState, {[action.comment.id]: action.comment})
     case ADD_COMMENTS:
-    console.log('comments reducer');
-    console.log(action.comments[0]);
-      let newstuff = merge({}, action.comments)
-      // console.log('newstuff');
+    // console.log('comments reducer');
+    // console.log(action.comments);
+      let newmaybe = {}
+      let secondpojo = {}
+      action.comments.forEach((comment, idx) => {
+        secondpojo[idx] = comment
+      })
+      newmaybe[action.comments[0].photo_id] = secondpojo
+      // console.log(newmaybe);
+      let newstuff = merge({}, oldState, newmaybe)
       // console.log(newstuff);
       return newstuff;
     case REMOVE_COMMENT:
