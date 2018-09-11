@@ -11,7 +11,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPhotos();
+    // this.props.fetchPhotos();
   }
 
   render() {

@@ -7,12 +7,16 @@ import CommentComponent from './comment';
 import merge from 'lodash/merge';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('container');
-  // console.log(state);
+  // console.log('container');
+  // console.log(ownProps.photo.id);
   let newComments = [];
   let newUsers = [];
-  ownProps.comments.forEach(obj => newComments.push(obj.body));
-  ownProps.comments.forEach(obj => newUsers.push(obj.username));
+  ownProps.comments.forEach(obj => {
+    if (obj.photo_id === ownProps.photo.id) {
+      newComments.push(obj.body);
+      newUsers.push(obj.username);
+    }
+  });
   // console.log(`new comments ${newComments}`);
   // console.log(`new userss ${newUsers}`);
   const commentState = {
@@ -21,7 +25,7 @@ const mapStateToProps = (state, ownProps) => {
     comments: newComments,
     usersOfComments: newUsers
   }
-  console.log(commentState);
+  // console.log(commentState);
   return commentState;
   // return Object.values(state.comments);
 };

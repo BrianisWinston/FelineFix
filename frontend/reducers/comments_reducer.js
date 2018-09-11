@@ -11,8 +11,8 @@ const CommentsReducer = (oldState = {}, action) => {
       // console.log('comments reducer');
       return merge({}, oldState, {[action.comment.id]: action.comment})
     case ADD_COMMENTS:
-    // console.log('comments reducer');
-    // console.log(action.comments);
+    console.log('comments reducer');
+    console.log(action.comments[0]);
       let newstuff = merge({}, action.comments)
       // console.log('newstuff');
       // console.log(newstuff);

@@ -4,6 +4,8 @@ import { fetchPhotos, deletePhoto } from '../../actions/photo_actions';
 import AllPhotos from './all_photos';
 
 const mapStateToProps = (state) => {
+  // console.log('photo container')
+  // console.log(Object.values(state.comments));
   return {
   currentUser: state.session.currentUser,
   photos: Object.values(state.photos),
