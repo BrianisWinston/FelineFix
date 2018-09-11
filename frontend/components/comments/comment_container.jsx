@@ -28,7 +28,7 @@ const mapStateToProps = (state, ownProps) => {
     comments: newComments,
     usersOfComments: newUsers
   }
-  console.log(commentState);
+  // console.log(commentState);
   return commentState;
   // return Object.values(state.comments);
 };

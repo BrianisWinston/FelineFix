@@ -39,10 +39,13 @@ class CommentComponent extends React.Component {
     )
   }
 
-  renderComments() {
-    // .then(data => this.setState({comments: data.comments}))
-    // console.log('props');
-    // console.log(this.props);
+  renderComments(i) {
+    let onecomment = this.props.comments[i];
+    let oneuser = this.props.usersOfComments[i];
+    return {
+        onecomment,
+        oneuser
+    }
     // newComments = newComments.map( comment => {
     //     return (
     //       <li>
@@ -56,22 +59,25 @@ class CommentComponent extends React.Component {
   }
 
   render() {
-    // console.log(this.props.comments);
-
+    let stuff
+    let tester = []
+    for (var i=0; i < this.props.comments.length; i++) {
+      stuff = this.renderComments(i)
+      tester.push(stuff)
+    }
+    console.log(tester);
     return (
       <div className="comments">
-        {this.props.comments.map((comment,idx) => (
-          <div className="comments-comment" key={idx}>
-            {comment}
+        {tester.map(comment =>
+          <div className="comments-div">
+            <div className="comments-username">
+              {comment.oneuser}
+            </div>
+            <div className="comments-comment">
+              {comment.onecomment}
+            </div>
           </div>
-          ))
-        }
-        {this.props.usersOfComments.map((user,idx) =>
-          <div className="comments-username" key={idx}>
-            {user}
-          </div>
-          )
-        }
+        )}
         <form className="comments-submit" onSubmit={this.handleSubmit}>
           <input
             className=""

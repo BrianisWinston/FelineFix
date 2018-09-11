@@ -775,22 +775,29 @@ top: 24px;
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: red;
+  // background-color: red;
   overflow: auto;
 }
 
 .comments-comment {
-  position: relative;
-  width: 100%;
+  display: inline-block;
   height: 15px;
-  top: 4px;
 }
 
 .comments-username {
-  display: -webkit-box;
+  display: inline-block;
+  float: left;
+  position: relative;
+  height: 15px;
+  font-weight: 600;
+}
+
+.comments-div{
   position: relative;
   width: 100%;
-  height: 15px;
-  bottom: 55px;
-  font-weight: bold;
+  // background-color: lightblue;
+}
+
+.comments-submit-btn {
+  display: none;
 }
