@@ -480,11 +480,12 @@ top: 24px;
 .photo-comment-section {
   position: relative;
   width: 600px;
-  height: 200px;
+  height: 100%;
   margin: auto;
   border: 1px solid #e6e6e6;
   border-top: 0;
   background-color: white;
+  overflow: -webkit-paged-y;
 }
 
 .photo-reversed {
