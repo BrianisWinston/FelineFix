@@ -4,11 +4,10 @@ import { fetchPhotos, deletePhoto } from '../../actions/photo_actions';
 import AllPhotos from './all_photos';
 
 const mapStateToProps = (state) => {
-  console.log('photos');
-  console.log(Object.values(state.photos));
   return {
   currentUser: state.session.currentUser,
-  photos: Object.values(state.photos)
+  photos: Object.values(state.photos),
+  comments: Object.values(state.comments)
 }
 };
 
