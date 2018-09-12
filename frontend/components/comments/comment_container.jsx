@@ -7,8 +7,6 @@ import CommentComponent from './comment';
 import merge from 'lodash/merge';
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log('container');
-  // console.log(ownProps.photo.id);
   let newComments = [];
   let newUsers = [];
   let commentIds = [];
@@ -19,15 +17,6 @@ const mapStateToProps = (state, ownProps) => {
       commentIds.push(obj.id)
     });
   }
-  console.log('comment container');
-  console.log(newComments);
-  console.log(newUsers);
-  console.log(commentIds);
-  // if (state.comments[ownProps.photo.id] !== undefined) {
-  //   console.log(Object.values(state.comments[ownProps.photo.id]));
-  // }
-  // console.log(`new comments ${newComments}`);
-  // console.log(`new userss ${newUsers}`);
   const commentState = {
     photo: ownProps.photo,
     currentUser: ownProps.currentUser,
@@ -35,9 +24,7 @@ const mapStateToProps = (state, ownProps) => {
     usersOfComments: newUsers,
     commentIds: commentIds
   }
-  // console.log(commentState);
   return commentState;
-  // return Object.values(state.comments);
 };
 
 const mapDispatchToProps = dispatch => ({

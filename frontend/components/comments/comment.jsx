@@ -15,12 +15,6 @@ class CommentComponent extends React.Component {
 
   componentDidMount() {
     this.props.fetchComments(this.state.photoId)
-    // .then(comments => console.log(comments))
-    // console.log('comment component');
-    // console.log(this.state);
-    // console.log(this.state.comments);
-    // let newComments = this.props.fetchComments(this.state.photo.id);
-    // this.setState({comments: newComments})
   }
 
   handleSubmit(e) {
@@ -67,7 +61,6 @@ class CommentComponent extends React.Component {
       stuff = this.renderComments(i)
       tester.push(stuff)
     }
-    // console.log(tester);
     return (
       <div className="comments">
         {tester.map((comment, idx) =>
