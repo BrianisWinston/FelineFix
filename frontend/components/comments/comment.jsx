@@ -42,9 +42,11 @@ class CommentComponent extends React.Component {
   renderComments(i) {
     let onecomment = this.props.comments[i];
     let oneuser = this.props.usersOfComments[i];
+    let commentId = this.props.commentIds[i]
     return {
         onecomment,
-        oneuser
+        oneuser,
+        commentId
     }
     // newComments = newComments.map( comment => {
     //     return (
@@ -65,16 +67,19 @@ class CommentComponent extends React.Component {
       stuff = this.renderComments(i)
       tester.push(stuff)
     }
-    console.log(tester);
+    // console.log(tester);
     return (
       <div className="comments">
-        {tester.map(comment =>
-          <div className="comments-div">
+        {tester.map((comment, idx) =>
+          <div className="comments-div" key={idx}>
             <div className="comments-username">
               {comment.oneuser}
             </div>
             <div className="comments-comment">
               {comment.onecomment}
+            </div>
+            <div className="comment-delete">
+              <button onClick={() => { this.props.deleteComment(comment.commentId) }} >{<i className="fas fa-times"></i>}</button>
             </div>
           </div>
         )}

@@ -9,9 +9,9 @@ const addComments = comments => ({
   comments
 });
 
-const addComment = comment => ({
+const addComment = payload => ({
   type: ADD_COMMENT,
-  comment
+  payload
 })
 
 const removeComment = photo => ({
@@ -25,7 +25,7 @@ export const fetchComments = photoId => dispatch => {
 };
 
 export const createComment = comment => dispatch => (
-  CommentAPIUtil.createComment(comment).then(photo => dispatch(addComment(photo)))
+  CommentAPIUtil.createComment(comment).then(payload => dispatch(addComment(payload)))
 );
 
 export const deleteComment = commentId => dispatch => (
