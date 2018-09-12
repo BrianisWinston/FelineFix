@@ -793,6 +793,7 @@ top: 24px;
   color: #262626;
   font-weight: 600;
   left: 16px;
+  font-size: 14px;
 }
 
 .comments-div{
@@ -803,4 +804,17 @@ top: 24px;
 
 .comments-submit-btn {
   display: none;
+}
+
+.comments-submit {
+  text-align: left;
+  margin-left: 15px;
+  border-top: 1px solid #efefef;
+  padding-top: 8px;
+  padding-bottom: 11px;
+}
+
+.comments-submit input {
+  width: 100%;
+  background-color: lightblue;
 }
