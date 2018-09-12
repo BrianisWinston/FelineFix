@@ -446,7 +446,6 @@ top: 24px;
 
 .photo-entity {
   padding-top: 50px;
-  padding-bottom: 40px;
 }
 
 .photo-header {
@@ -486,12 +485,18 @@ top: 24px;
   border: 1px solid #e6e6e6;
   border-top: 0;
   background-color: white;
-  overflow: -webkit-paged-y;
+  overflow: auto;
+  padding-bottom: 27px;
 }
 
 .photo-reversed {
   display: flex;
   flex-direction: column-reverse;
+}
+
+.photo-reversed:last-child {
+  // padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .photo-image {
