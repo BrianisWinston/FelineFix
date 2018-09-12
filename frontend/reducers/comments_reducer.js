@@ -7,8 +7,7 @@ const CommentsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case ADD_COMMENT:
-    console.log(oldState);
-    if (Object.keys(oldState).includes(action.payload.comment.photo_id)) {
+    if (Object.keys(oldState).includes(action.payload.comment.photo_id.toString())) {
       let idx = Object.keys(oldState[action.payload.comment.photo_id]).length;
       let pojo = { [idx]: action.payload.comment }
       return merge({}, oldState, {[action.payload.comment.photo_id]: pojo})
@@ -37,8 +36,7 @@ const CommentsReducer = (oldState = {}, action) => {
         }
       });
       console.log(deletedComment)
-      console.log(newState[action.id]);
-      delete newState[action.id];
+      delete newState[action.photo.photo.id][action.photo.photo.oldId];
       return newState;
     default:
       return oldState;
