@@ -566,6 +566,7 @@ top: 24px;
   left: 15px;
   text-align: left;
   width: 555px;
+  margin-bottom: 8px;
 }
 
 .photo-username {
@@ -784,7 +785,7 @@ top: 24px;
   position: relative;
   display: inline;
   height: 15px;
-  width: auto;
+  // width: 50px;
   left: 16px;
 }
 
@@ -808,11 +809,11 @@ top: 24px;
   /* left: 15px; */
   text-align: left;
   /* width: 555px; */
-  margin: 8px auto auto auto;
+  margin: auto auto 8px auto;
 }
 
 .comments-div:last-of-type {
-  margin-bottom: 10px;
+  // margin-bottom: 2px;
 }
 
 .comments-submit-btn {
@@ -831,4 +832,16 @@ top: 24px;
 .comments-submit input {
   width: 100%;
   // background-color: lightblue;
+}
+
+.comment-delete {
+  position: relative;
+  display: inline;
+  float: right;
+  margin-right: 6px;
+  opacity: 0.3;
+}
+
+.comment-delete button {
+  font-size: 10px;
 }
