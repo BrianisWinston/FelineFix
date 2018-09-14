@@ -18,7 +18,7 @@ class CommentComponent extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault;
+    e.preventDefault();
     this.props.createComment({
       photoId: this.state.photoId,
       userId: this.state.userId,
