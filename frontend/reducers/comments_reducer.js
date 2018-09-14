@@ -28,11 +28,18 @@ const CommentsReducer = (oldState = {}, action) => {
       return newstuff;
     case REMOVE_COMMENT:
       let newState = merge({}, oldState);
+      let deleted;
+      console.log(oldState[action.photo.photo.id]);
       Object.values(newState[action.photo.photo.id]).forEach((comment, idx) => {
         if (comment.id === action.photo.photo.oldId) {
           delete newState[action.photo.photo.id][idx];
+          deleted = true;
+        } else if (deleted !== undefined) {
+          newState[action.photo.photo.id][idx - 1] = comment;
+          delete newState[action.photo.photo.id][idx];
         }
       })
+      console.log(newState[action.photo.photo.id]);
       return newState;
     default:
       return oldState;
