@@ -3,7 +3,8 @@ var path = require("path");
 module.exports = {
   context: __dirname,
   entry: "./frontend/insta_clone.jsx",
-  // watch: true,
+  // mode: 'production',
+  watch: true,
   output: {
     path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
     filename: "./bundle.js"
