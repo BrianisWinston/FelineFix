@@ -24,6 +24,7 @@ export default ({ logout, currentUser, createPhoto }) => {
           <div className="rightside">
             <button className="navbar-logout" onClick={logout}>Logout </button>
             <UploadButton createPhoto={createPhoto} />
+            <div className="profile-icon"></div>
           </div>
         </div>
       </div>

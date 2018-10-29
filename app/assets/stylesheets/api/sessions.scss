@@ -407,6 +407,14 @@ top: 24px;
   padding-right: 8px;
 }
 
+.profile-icon {
+  position: relative;
+  width: 27px;
+  height: 27px;
+  background-image: url(/assets/user-9267f89….png);
+  background-size: cover;
+}
+
 // media query
 
 @media (max-width: 680px) {
