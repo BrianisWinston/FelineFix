@@ -18,10 +18,7 @@ class Home extends React.Component {
     if (this.currentUser) {
     return (
       <div className="homediv">
-        <Navbar logout={this.logout} createPhoto={this.props.createPhoto} currentUser={ this.currentUser }/>
-        <div>
-          <AllPhotosContainer />
-        </div>
+        <AllPhotosContainer />
       </div>
     )
     } else {
