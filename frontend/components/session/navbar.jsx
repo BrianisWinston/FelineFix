@@ -10,12 +10,14 @@ export default ({ logout, currentUser, createPhoto }) => {
       <div className="nav">
         <div className="navbar">
           <div className="leftside">
-            <div className="icon-felinefix">
-              <i className="fas fa-paw"></i>
-            </div>
-            <div className="icon-logo">
-              FelineFix
-            </div>
+            <Link to='/'>
+              <div className="icon-felinefix">
+                <i className="fas fa-paw"></i>
+              </div>
+              <div className="icon-logo">
+                FelineFix
+              </div>
+            </Link>
           </div>
           <div className="middle">
             <input
