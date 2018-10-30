@@ -1,7 +1,10 @@
 import React from 'react';
 import UploadButton from './upload_button';
+import UserProfile from './user_profile';
+import { Link } from 'react-router-dom';
 
 export default ({ logout, currentUser, createPhoto }) => {
+  console.log(` User ID: ${currentUser.id}`);
   return (
     <header>
       <div className="nav">
@@ -24,7 +27,7 @@ export default ({ logout, currentUser, createPhoto }) => {
           <div className="rightside">
             <button className="navbar-logout" onClick={logout}>Logout </button>
             <UploadButton createPhoto={createPhoto} />
-            <div className="profile-icon"></div>
+            <Link to={`/${currentUser.id}`} className="profile-icon"></Link>
           </div>
         </div>
       </div>
