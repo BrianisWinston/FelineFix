@@ -10,10 +10,6 @@ class Home extends React.Component {
     this.logout = props.logout;
   }
 
-  componentDidMount() {
-    // this.props.fetchPhotos();
-  }
-
   render() {
     if (this.currentUser) {
     return (

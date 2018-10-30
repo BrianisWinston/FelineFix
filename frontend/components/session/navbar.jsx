@@ -4,7 +4,6 @@ import UserProfile from './user_profile';
 import { Link } from 'react-router-dom';
 
 export default ({ logout, currentUser, createPhoto }) => {
-  console.log(` User ID: ${currentUser.id}`);
   return (
     <header>
       <div className="nav">
