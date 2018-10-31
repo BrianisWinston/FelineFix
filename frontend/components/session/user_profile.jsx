@@ -3,11 +3,15 @@ import React from 'react';
 class UserProfile extends React.Component  {
   constructor(props) {
     super(props)
+
   }
   render() {
     return (
       <div >
-      user profileasdfs
+        {this.props.photos.map( (photo, id) => (
+            <img src={photo.img_url} key={id}/>
+          )
+        )}
       </div>
     )
   }

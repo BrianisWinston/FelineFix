@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import HomeContainer from './session/home_container';
-import UserProfile from './session/user_profile';
+import UserProfileContainer from './session/user_profile_container';
 import NavContainer from './session/navbar_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
