@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { Switch } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import HomeContainer from './session/home_container';
@@ -13,10 +12,12 @@ const App = () => (
     <header>
       <ProtectedRoute path="/" component={NavContainer} />
     </header>
+    <Switch>
       <Route exact path="/" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
-      <ProtectedRoute path="/home" component={HomeContainer} />
+      <ProtectedRoute exact path="/home" component={HomeContainer} />
       <ProtectedRoute exact path="/:userId" component={UserProfile} />
+    </Switch>
   </div>
 );
 

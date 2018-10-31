@@ -1,9 +1,16 @@
 import React from 'react';
 
-export default () => {
-  return (
-    <div>
-    user profile
-    </div>
-  )
+class UserProfile extends React.Component  {
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    return (
+      <div >
+      user profileasdfs
+      </div>
+    )
+  }
 };
+
+export default UserProfile;
