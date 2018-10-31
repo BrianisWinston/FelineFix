@@ -5,6 +5,11 @@ class UserProfile extends React.Component  {
     super(props)
 
   }
+
+  componentDidMount() {
+    this.props.fetchPhotos();
+  }
+
   render() {
     return (
       <div className="user-profile">
@@ -13,8 +18,8 @@ class UserProfile extends React.Component  {
         <div className="user-profile-photos-container">
           <ul className="user-profile-photos-ul">
               {this.props.photos.map( (photo, id) => (
-                <li className="user-profile-photos-li">
-                  <img src={photo.img_url} key={id}/>
+                <li className="user-profile-photos-li" key={id}>
+                  <img src={photo.img_url}/>
                 </li>
                 )
               )}
