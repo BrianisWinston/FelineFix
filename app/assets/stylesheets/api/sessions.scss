@@ -760,6 +760,8 @@ top: 24px;
   // max-height: 500px;
 }
 
+// LIKES ---------------------------------------------------------------
+
 .likes {
   position: relative;
   width: 40px;
@@ -788,6 +790,8 @@ top: 24px;
   color: #033569;
   font-size: 14px;
 }
+
+// COMMENTS ------------------------------------------------------------
 
 .comments {
   top: 25px;
@@ -858,4 +862,53 @@ top: 24px;
 
 .comment-delete button {
   font-size: 10px;
+}
+
+// USER PROFILE --------------------------------------------------------
+
+.user-profile {
+  box-sizing: content-box;
+  width: calc(100% - 40px);
+  margin: 0 auto 30px;
+  max-width: 935px;
+  padding: 135px 20px 60px;
+}
+
+.user-profile-header {
+  margin: 0 auto;
+  border-bottom: 1px solid #dbdbdb;
+  padding-bottom: 50px;
+}
+
+.user-profile-photos-container {
+  display: flex;
+  margin-top: 60px;
+}
+
+.user-profile-photos-ul {
+  margin-bottom: 28px;
+  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 293px);
+  grid-gap: 1.6em;
+  justify-content: center;
+  list-style: none;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.user-profile-photos-li {
+  max-width: 293px;
+  max-height: 293px;
+  overflow: hidden;
+  display: list-item;
+}
+
+.user-profile-photos-li img {
+  max-height: 375px;
+  width: auto;
+  position: relative;
+  // top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
 }

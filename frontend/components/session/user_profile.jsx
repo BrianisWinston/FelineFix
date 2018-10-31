@@ -7,11 +7,19 @@ class UserProfile extends React.Component  {
   }
   render() {
     return (
-      <div >
-        {this.props.photos.map( (photo, id) => (
-            <img src={photo.img_url} key={id}/>
-          )
-        )}
+      <div className="user-profile">
+        <div className="user-profile-header">
+        </div>
+        <div className="user-profile-photos-container">
+          <ul className="user-profile-photos-ul">
+              {this.props.photos.map( (photo, id) => (
+                <li className="user-profile-photos-li">
+                  <img src={photo.img_url} key={id}/>
+                </li>
+                )
+              )}
+          </ul>
+        </div>
       </div>
     )
   }

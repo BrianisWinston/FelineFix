@@ -30,7 +30,7 @@ class AllPhotos extends React.Component {
   };
 
   componentDidMount() {
-    let list = this.props.fetchPhotos();
+    this.props.fetchPhotos();
   }
 
 
