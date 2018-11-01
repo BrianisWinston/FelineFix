@@ -15,7 +15,6 @@ const mapStateToProps = (state) => {
   //   console.log(state.session.currentUser.id);
   //   console.log(photo[1].user_id === state.session.currentUser.id);
   // })
-  console.log(state);
   return ({
     photos: state.photos
   })

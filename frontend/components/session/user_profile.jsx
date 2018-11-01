@@ -9,21 +9,21 @@ class UserProfile extends React.Component  {
   }
 
   componentDidMount() {
-    this.props.fetchPhotos();
     let newPhotos = [];
-    Object.entries(this.props.photos).filter( photo => {
-      console.log(`${photo[1].user_id} == ${this.props.match.params.userId} : ${photo[1].user_id == this.props.match.params.userId}`);
-      if (photo[1].user_id == this.props.match.params.userId) {
-        newPhotos.push(photo[1])
-      }
+    this.props.fetchPhotos()
+    .then(data => {
+      Object.entries(this.props.photos).filter( photo => {
+        if (photo[1].user_id == this.props.match.params.userId) {
+          newPhotos.push(photo[1])
+        }
+      });
+      this.setState({photos: newPhotos});
     });
-    console.log(`new photos: ${newPhotos}`);
-    this.setState({photos: newPhotos})
   }
 
   render() {
     let logic = 'hello';
-    
+    console.log(this.state.photos);
     return (
       <div className="user-profile">
         <div className="user-profile-header">
