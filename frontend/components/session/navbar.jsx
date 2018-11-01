@@ -32,7 +32,7 @@ export default ({ logout, currentUser, createPhoto }) => {
               />
           </div>
           <div className="rightside">
-            <button className="navbar-logout" onClick={logout}>Logout </button>
+            <button className="navbar-logout" onClick={logout}> </button>
             <UploadButton createPhoto={createPhoto} />
             <Link to={`/${currentUser.id}`} className="profile-icon" onClick={scrollUp()}></Link>
           </div>

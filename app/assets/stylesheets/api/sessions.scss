@@ -358,21 +358,12 @@ html, body {
 }
 
 .navbar-logout {
-  float: right;
+  /* float: right; */
   position: relative;
-  text-align: center;
-  /* background: #3897f0; */
-  /* border-color: #3897f0; */
-  color: #3897f0;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 26px;
-  border-radius: 3px;
-  border-style: solid;
-  width: 61px;
-  height: 26px;
-  padding-left: 8px;
-  padding-right: 8px;
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
+  background-image: image-url("logout.png");
 }
 
 .rightside {
@@ -385,26 +376,8 @@ top: 24px;
 }
 
 .uploadbutton {
-  z-index: 1;
   position: relative;
-  // right: 27px;
-  // float: right;
-  // position: relative;
-  // text-align: center;
-  background: #3897f0;
-  border-color: #3897f0;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 26px;
-  // white-space: nowrap;
-  border-radius: 3px;
-  border-style: solid;
-  width: 61px;
-  height: 26px;
-  // margin: 15px 0px;
-  padding-left: 8px;
-  padding-right: 8px;
+  background-image: image-url("upload.png");
 }
 
 .profile-icon {
