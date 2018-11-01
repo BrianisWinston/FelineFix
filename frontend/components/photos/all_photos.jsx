@@ -52,7 +52,7 @@ class AllPhotos extends React.Component {
                         <i className="far fa-user"></i>
                       </div>
                       <div className="photo-user">
-                        <Link to={`/${this.props.currentUser.id}`}>
+                        <Link to={`/${photo.user_id}`}>
                           { photo.username }
                         </Link>
 
