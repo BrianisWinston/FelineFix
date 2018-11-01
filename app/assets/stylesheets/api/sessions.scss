@@ -861,6 +861,7 @@ top: 24px;
   margin: 0 auto;
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 50px;
+  display: flex;
 }
 
 .user-profile-photos-container {
@@ -900,7 +901,10 @@ top: 24px;
   position: relative;
   width: 100px;
   height: 100px;
-  font-size: 30px;
+  font-size: 90px;
+  flex: 1;
+  top: 20px;
+  left: 45px;
 }
 
 .user-profile-name {
@@ -908,4 +912,8 @@ top: 24px;
   font-size: 40px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+}
+
+.user-profile-info {
+  flex: 3;
 }
