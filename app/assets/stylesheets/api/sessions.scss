@@ -895,3 +895,17 @@ top: 24px;
   left: 50%;
   transform: translate(-50%, -10%);
 }
+
+.user-profile-pic {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  font-size: 30px;
+}
+
+.user-profile-name {
+  position: relative;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}

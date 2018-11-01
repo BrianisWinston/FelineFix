@@ -27,6 +27,14 @@ class UserProfile extends React.Component  {
     return (
       <div className="user-profile">
         <div className="user-profile-header">
+          <div className="user-profile-pic">
+            <i className="far fa-user"></i>
+          </div>
+          <div className="user-profile-info">
+            <div className="user-profile-name">
+              {this.props.currentUser.username}
+            </div>
+          </div>
         </div>
         <div className="user-profile-photos-container">
           <ul className="user-profile-photos-ul">
