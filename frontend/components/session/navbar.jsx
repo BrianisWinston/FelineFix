@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom';
 export default ({ logout, currentUser, createPhoto }) => {
 
   const scrollUp = () => {
-    scrollTo(0, 100);
+    scrollTo(0, 0);
   }
   return (
     <header>
       <div className="nav">
         <div className="navbar">
-          <div className="leftside">
-            <Link to='/'>
-            <button onClick={scrollUp()}>
+          <div className="leftside" >
+            <Link to='/' onClick={scrollUp()}>
+            <button >
               <div className="icon-felinefix">
                 <i className="fas fa-paw"></i>
               </div>
@@ -34,7 +34,7 @@ export default ({ logout, currentUser, createPhoto }) => {
           <div className="rightside">
             <button className="navbar-logout" onClick={logout}>Logout </button>
             <UploadButton createPhoto={createPhoto} />
-            <Link to={`/${currentUser.id}`} className="profile-icon"></Link>
+            <Link to={`/${currentUser.id}`} className="profile-icon" onClick={scrollUp()}></Link>
           </div>
         </div>
       </div>
