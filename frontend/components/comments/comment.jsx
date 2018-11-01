@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router-dom';
 
 class CommentComponent extends React.Component {
   constructor(props) {
@@ -66,7 +67,9 @@ class CommentComponent extends React.Component {
         {tester.map((comment, idx) =>
           <div className="comments-div" key={idx}>
             <div className="comments-username">
-              {comment.oneuser}
+              <Link to={`/${this.state.userId.id}`}>
+                {comment.oneuser}
+              </Link>
             </div>
             <div className="comments-comment">
               {comment.onecomment}
