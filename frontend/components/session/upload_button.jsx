@@ -67,7 +67,7 @@ class UploadButton extends React.Component {
   render() {
     return(
       <div>
-        <button className="uploadbutton" onClick={this.openModal}>Upload</button>
+        <button className="uploadbutton" onClick={this.openModal}></button>
         <div >
           <Modal
             className="modal-box"

@@ -359,11 +359,13 @@ html, body {
 
 .navbar-logout {
   /* float: right; */
-  position: relative;
+  position: absolute;
   width: 25px;
   height: 25px;
   background-size: 25px;
   background-image: image-url("logout.png");
+  top: 0px;
+  right: 27px;
 }
 
 .rightside {
@@ -376,16 +378,24 @@ top: 24px;
 }
 
 .uploadbutton {
-  position: relative;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-size: 25px;
   background-image: image-url("upload.png");
+  top: 0px;
+  right: 140px;
 }
 
 .profile-icon {
   position: absolute;
-  width: 27px;
-  height: 27px;
-  background-image: image-url("user.png");
+  width: 25px;
+  height: 25px;
+  background-image: url(/assets/avatar-afedea3….png);
   background-size: cover;
+  top: 0px;
+  right: 83px;
+  background-image: image-url("avatar.png");
 }
 
 // media query
