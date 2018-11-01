@@ -6,6 +6,7 @@ import LikeContainer from '../likes/like_container';
 import LikeCount from '../likes/like_count';
 import CommentContainer from '../comments/comment_container';
 import DeletePhoto from './delete_photo';
+import { Link } from 'react-router-dom';
 
 class AllPhotos extends React.Component {
   constructor(props) {
@@ -51,8 +52,12 @@ class AllPhotos extends React.Component {
                         <i className="far fa-user"></i>
                       </div>
                       <div className="photo-user">
-                        { photo.username }
+                        <Link to={`/${this.props.currentUser.id}`}>
+                          { photo.username }
+                        </Link>
+
                       </div>
+
                     </div>
                     <DeletePhoto deletePhoto={this.props.deletePhoto} photo={photo} currentUser={this.props.currentUser}/>
                   </div>

@@ -3,11 +3,20 @@ import React from 'react';
 class UserProfile extends React.Component  {
   constructor(props) {
     super(props)
-
+    this.state = {
+      photos: null
+    }
   }
 
   componentDidMount() {
     this.props.fetchPhotos();
+    let newPhotos = [];
+    Object.entries(this.props.photos).filter( photo => {
+      if (photo[1].user_id === state.match.params.userId) {
+        newPhotos.push(photo[1])
+      };
+    });
+    this.setState({photos: newPhotos});
   }
 
   render() {
