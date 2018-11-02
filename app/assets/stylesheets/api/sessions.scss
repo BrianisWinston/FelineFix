@@ -923,7 +923,21 @@ top: 24px;
   padding-top: 20px;
 }
 
+.user-profile-bio {
+  position: relative;
+  float: left;
+  text-align: left;
+}
+
 .user-profile-bio > * {
   float: left;
   display: inline-block;
+}
+
+.user-profile-info h6 {
+  left: 10px;
+  position: relative;
+  font-weight: 400;
+  font-size: 12px;
+  bottom: 4px;
 }

@@ -35,8 +35,11 @@ class UserProfile extends React.Component  {
               {this.props.currentUser.username}
             </div>
             <div className="user-profile-bio">
-              <h5>Bio</h5>
-              <h6>znvez epljc plztu uxrxq xpclo meutg akefo cpsjh vwonr shyly </h6>
+              <h4>Bio</h4>
+              <h6>
+                znvez epljc plztu uxrxq xpclo meutg akefo cpsjh vwonr shyly
+                afobq tzelc cmhnj gvpjp ebcmh vbdtv mevak lidro egriu shxkv 
+              </h6>
             </div>
           </div>
         </div>
