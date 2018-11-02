@@ -36,10 +36,10 @@ class UserProfile extends React.Component  {
             </div>
             <div className="user-profile-bio">
               <h4>Bio</h4>
-              <h6>
+              <span>
                 znvez epljc plztu uxrxq xpclo meutg akefo cpsjh vwonr shyly
-                afobq tzelc cmhnj gvpjp ebcmh vbdtv mevak lidro egriu shxkv 
-              </h6>
+                afobq tzelc cmhnj gvpjp ebcmh vbdtv mevak lidro egriu shxkv
+              </span>
             </div>
           </div>
         </div>

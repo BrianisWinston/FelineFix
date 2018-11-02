@@ -909,7 +909,7 @@ top: 24px;
 
 .user-profile-name {
   position: relative;
-  font-size: 40px;
+  font-size: 34px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   text-align: left;
@@ -924,20 +924,27 @@ top: 24px;
 }
 
 .user-profile-bio {
+  display: inline-block;
   position: relative;
   float: left;
   text-align: left;
+  padding-top: 25px;
 }
 
 .user-profile-bio > * {
-  float: left;
-  display: inline-block;
+  // float: left;
+  // display: inline;
 }
 
-.user-profile-info h6 {
-  left: 10px;
+.user-profile-bio h4 {
+  display: inline;
+  padding-right: 10px
+}
+
+.user-profile-info span {
+  left: -1px;
   position: relative;
   font-weight: 400;
   font-size: 12px;
-  bottom: 4px;
+  bottom: 1px;
 }
