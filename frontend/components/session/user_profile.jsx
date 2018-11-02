@@ -17,13 +17,16 @@ class UserProfile extends React.Component  {
           newPhotos.push(photo[1])
         }
       });
-      this.setState({photos: newPhotos});
+      this.setState({
+        photos: newPhotos,
+        username: newPhotos[0].username
+      });
     });
   }
 
   render() {
     let logic = 'hello';
-    console.log(this.state.photos);
+    console.log(this.state.username);
     return (
       <div className="user-profile">
         <div className="user-profile-header">
@@ -32,7 +35,7 @@ class UserProfile extends React.Component  {
           </div>
           <div className="user-profile-info">
             <div className="user-profile-name">
-              {this.props.currentUser.username}
+              {this.state.username}
             </div>
             <div className="user-profile-bio">
               <h4>Bio</h4>
