@@ -912,8 +912,18 @@ top: 24px;
   font-size: 40px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
+  text-align: left;
 }
 
 .user-profile-info {
   flex: 3;
+  width: 500px;
+  position: relative;
+  padding-left: 100px;
+  padding-top: 20px;
+}
+
+.user-profile-bio > * {
+  float: left;
+  display: inline-block;
 }
