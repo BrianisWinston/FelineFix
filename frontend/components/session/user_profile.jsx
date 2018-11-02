@@ -25,8 +25,6 @@ class UserProfile extends React.Component  {
   }
 
   render() {
-    let logic = 'hello';
-    console.log(this.state.username);
     return (
       <div className="user-profile">
         <div className="user-profile-header">

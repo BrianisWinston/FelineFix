@@ -890,11 +890,12 @@ top: 24px;
 
 .user-profile-photos-li img {
   max-height: 375px;
-  width: auto;
+  width: 300px;
+  height: 300px;
   position: relative;
-  // top: 50%;
   left: 50%;
   transform: translate(-50%, -10%);
+  object-fit: cover;
 }
 
 .user-profile-pic {
