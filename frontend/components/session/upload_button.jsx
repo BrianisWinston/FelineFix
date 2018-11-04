@@ -20,6 +20,7 @@ class UploadButton extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleDrop = this.handleDrop.bind(this);
   }
 
   openModal() {
@@ -118,6 +119,7 @@ class UploadButton extends React.Component {
 
   render() {
     console.log(`createdPhoto: ${this.state.createdPhoto}`);
+    console.log(this.state);
     return(
       <div>
         <button className="uploadbutton" onClick={this.openModal}></button>
