@@ -8,7 +8,6 @@ import merge from 'lodash/merge';
 class UploadButton extends React.Component {
   constructor(props) {
     super(props)
-    this.upload = this.upload.bind(this);
     this.postPhoto = this.postPhoto.bind(this);
 // modal logic ----------------------------------------------------
     this.state = {
@@ -37,24 +36,15 @@ class UploadButton extends React.Component {
 
   postPhoto(e) {
     e.preventDefault();
-    let captionValue = this.state.caption
-    let newPhoto = { img_url: this.state.createdPhoto, caption: captionValue };
-    this.props.createPhoto(newPhoto);
-    this.closeModal();
-    this.setState({createdPhoto: "", caption: ""})
+    if (this.state.createdPhoto !== "" && this.state.caption !== "") {
+      let captionValue = this.state.caption
+      let newPhoto = { img_url: this.state.createdPhoto, caption: captionValue };
+      this.props.createPhoto(newPhoto);
+      this.closeModal();
+      this.setState({createdPhoto: "", caption: ""})
+      scrollTo(0, 0);
+    }
   }
-
-  upload(e) {
-    e.preventDefault();
-    window.cloudinary.openUploadWidget(
-      window.cloudinary_options,
-      (error, photos) => {
-        if (error === null) {
-          let newState = Object.assign({}, this.state, {createdPhoto: photos[0].url});
-          this.setState(newState);
-        }
-      }
-  )}
 
   update(field) {
     return (e) => {
@@ -68,7 +58,6 @@ class UploadButton extends React.Component {
 
   handleDrop(files) {
     let file = files[0]
-    console.log(file);
     const uploadPreset = window.cloudinary_options.upload_preset;
     const uploadUrl = `https://api.cloudinary.com/v1_1/${window.cloudinary_options.cloud_name}/image/upload`;
 
@@ -86,7 +75,6 @@ class UploadButton extends React.Component {
         this.setState({
           createdPhoto: response.body.secure_url,
         });
-        console.log(this.state);
       }
     });
   }
@@ -113,9 +101,15 @@ class UploadButton extends React.Component {
     }
   }
 
+  cancelPhoto() {
+    this.setState({
+      createdPhoto: "",
+      caption: ""
+    })
+    this.closeModal();
+  }
+
   render() {
-    console.log(`createdPhoto: ${this.state.createdPhoto}`);
-    console.log(this.state);
     return(
       <div>
         <button className="uploadbutton" onClick={this.openModal}></button>
@@ -171,7 +165,7 @@ class UploadButton extends React.Component {
                   </div>
                   <div className="modal-buttons">
                     <input className="modal-submit" type="submit" value="Upload" />
-                    <button className="modal-cancel" onClick={this.closeModal}>Cancel</button>
+                    <button className="modal-cancel" onClick={this.cancelPhoto.bind(this)}>Cancel</button>
                   </div>
                 </form>
           </Modal>
