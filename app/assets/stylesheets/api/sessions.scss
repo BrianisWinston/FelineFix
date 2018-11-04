@@ -959,3 +959,24 @@ top: 24px;
   cursor: pointer;
   height: 350px;
 }
+
+.upload-photo-dropzone-content {
+  padding-top: 55px;
+  text-align: center;
+}
+
+.upload-photo-dropzone-content div {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  background-size: 150px;
+  background-image: image-url('file.png');
+  margin-bottom: 20px;
+}
+
+.upload-photo-text {
+  color: #262626;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+}
