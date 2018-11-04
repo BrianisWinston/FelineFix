@@ -169,8 +169,8 @@ class UploadButton extends React.Component {
                       />
                   </div>
                   <div className="modal-buttons">
-                    <button className="modal-upload" onClick={this.upload}>Cancel</button>
                     <input className="modal-submit" type="submit" value="Upload" />
+                    <button className="modal-cancel" onClick={this.upload}>Cancel</button>
                   </div>
                 </form>
           </Modal>
