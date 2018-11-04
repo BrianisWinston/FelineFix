@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
 import merge from 'lodash/merge';
 
 class UploadButton extends React.Component {
@@ -64,17 +66,52 @@ class UploadButton extends React.Component {
     Modal.setAppElement('body');
   }
 
+  handleDrop(files) {
+    let file = files[0]
+    console.log(file);
+    const uploadPreset = window.cloudinary_options.upload_preset;
+    const uploadUrl = `https://api.cloudinary.com/v1_1/${window.cloudinary_options.cloud_name}/image/upload`;
 
+    let upload = request.post(uploadUrl)
+                        .field('upload_preset', uploadPreset)
+                        .field('file', file);
+
+    upload.end((err, response) => {
+
+      if (err) {
+        console.error(err);
+      }
+
+      if (response.body.secure_url !== '') {
+        this.setState({
+          createdPhoto: response.body.secure_url,
+        });
+        console.log(this.state.createdPhoto);
+      }
+    });
+  }
+
+  renderDropzone() {
+    return (
+      <Dropzone
+        className="upload-photo-dropzone"
+        multiple={false}
+        accept="image/*"
+        onDrop={this.handleDrop}>
+        <div className="upload-photo-dropzone-content">
+          <p className="upload-photo-text">Drag over an image or click</p>
+          <p className="upload-photo-text">to select a file to upload!</p>
+        </div>
+      </Dropzone>
+    );
+  }
 
   renderPhoto() {
     if (this.state.createdPhoto === "") {
       return this.renderDropzone();
     } else {
       return (
-        <img
-          className="modal-photo-preview"
-          src={ this.state.createdPhoto }
-        />
+        <h1>asdfs</h1>
       )
     }
   }
@@ -118,6 +155,10 @@ class UploadButton extends React.Component {
                 <form onSubmit={this.postPhoto}>
                   <div className="modal-photo-box">
                     {this.renderPhoto()}
+                    <img
+                      className="modal-photo-preview"
+                      src={ this.state.createdPhoto }
+                    />
                   </div>
                   <div className="modal-caption">
                     <textarea
