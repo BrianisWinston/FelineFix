@@ -86,7 +86,7 @@ class UploadButton extends React.Component {
         this.setState({
           createdPhoto: response.body.secure_url,
         });
-        console.log(this.state.createdPhoto);
+        console.log(this.state);
       }
     });
   }
@@ -117,6 +117,7 @@ class UploadButton extends React.Component {
   }
 
   render() {
+    console.log(`createdPhoto: ${this.state.createdPhoto}`);
     return(
       <div>
         <button className="uploadbutton" onClick={this.openModal}></button>
