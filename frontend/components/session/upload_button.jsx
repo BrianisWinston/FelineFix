@@ -29,7 +29,6 @@ class UploadButton extends React.Component {
 
   afterOpenModal() {
     // references are now sync'd and can be accessed.
-    // this.subtitle.style.color = '#f00';
   }
 
   closeModal() {
@@ -110,10 +109,6 @@ class UploadButton extends React.Component {
   renderPhoto() {
     if (this.state.createdPhoto === "") {
       return this.renderDropzone();
-    } else {
-      return (
-        <h1>asdfs</h1>
-      )
     }
   }
 
@@ -133,6 +128,7 @@ class UploadButton extends React.Component {
             style={{
               overlay: {
                 position: 'fixed',
+                overflow: 'auto',
                 top: 0,
                 left: 0,
                 right: 0,
@@ -145,11 +141,11 @@ class UploadButton extends React.Component {
                 margin: '10% auto auto',
                 border: '1px solid #e6e6e6',
                 background: '#fff',
-                overflow: 'auto',
                 WebkitOverflowScrolling: 'touch',
                 borderRadius: '4px',
                 outline: 'none',
-                padding: '20px'
+                padding: '20px',
+                marginBottom: '40px'
                 }
               }
             }
