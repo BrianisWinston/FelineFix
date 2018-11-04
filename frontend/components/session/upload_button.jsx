@@ -138,7 +138,8 @@ class UploadButton extends React.Component {
                 right: 0,
                 bottom: 0,
                 margin: 'auto',
-                backgroundColor: 'rgba(89, 89, 89, 0.75)'},
+                backgroundColor: 'rgba(89, 89, 89, 0.75)',
+              },
               content: {
                 position: 'relative',
                 margin: '10% auto auto',
@@ -172,11 +173,8 @@ class UploadButton extends React.Component {
                       />
                   </div>
                   <div className="modal-buttons">
-                    <button className="modal-upload" onClick={this.upload}>Import Photo</button>
-                    <input className="modal-submit" type="submit" value="Submit" />
-                  </div>
-                  <div className="modal-icon-felinefix">
-                    <i className="fas fa-paw"></i>
+                    <button className="modal-upload" onClick={this.upload}>Cancel</button>
+                    <input className="modal-submit" type="submit" value="Upload" />
                   </div>
                 </form>
           </Modal>
