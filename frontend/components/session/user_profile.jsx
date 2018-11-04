@@ -35,6 +35,7 @@ class UserProfile extends React.Component  {
             <div className="user-profile-name">
               {this.state.username}
             </div>
+            <UploadPhoto />
             <div className="user-profile-bio">
               <h4>Bio</h4>
               <span>
