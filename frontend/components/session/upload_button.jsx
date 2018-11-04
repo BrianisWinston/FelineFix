@@ -64,6 +64,21 @@ class UploadButton extends React.Component {
     Modal.setAppElement('body');
   }
 
+
+
+  renderPhoto() {
+    if (this.state.createdPhoto === "") {
+      return this.renderDropzone();
+    } else {
+      return (
+        <img
+          className="modal-photo-preview"
+          src={ this.state.createdPhoto }
+        />
+      )
+    }
+  }
+
   render() {
     return(
       <div>
@@ -102,10 +117,7 @@ class UploadButton extends React.Component {
             <button className="modal-exit" onClick={this.closeModal}>{<i className="fas fa-times"></i>}</button>
                 <form onSubmit={this.postPhoto}>
                   <div className="modal-photo-box">
-                    <img
-                      className="modal-photo-preview"
-                      src={ this.state.createdPhoto }
-                    />
+                    {this.renderPhoto()}
                   </div>
                   <div className="modal-caption">
                     <textarea
@@ -115,13 +127,13 @@ class UploadButton extends React.Component {
                       onChange={this.update('caption')}
                       />
                   </div>
-                <div className="modal-buttons">
-                  <button className="modal-upload" onClick={this.upload}>Import Photo</button>
-                  <input className="modal-submit" type="submit" value="Submit" />
-                </div>
-                <div className="modal-icon-felinefix">
-                  <i className="fas fa-paw"></i>
-                </div>
+                  <div className="modal-buttons">
+                    <button className="modal-upload" onClick={this.upload}>Import Photo</button>
+                    <input className="modal-submit" type="submit" value="Submit" />
+                  </div>
+                  <div className="modal-icon-felinefix">
+                    <i className="fas fa-paw"></i>
+                  </div>
                 </form>
           </Modal>
         </div>
