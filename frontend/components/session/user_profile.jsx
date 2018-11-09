@@ -21,10 +21,22 @@ class UserProfile extends React.Component  {
         photos: newPhotos,
         username: newPhotos[0].username
       });
+      console.log(newPhotos);
     });
   }
 
+  stylingDisplay() {
+    let newStyle;
+    if (this.state.photos.length !== 0 && this.state.photos[0].user_id === this.props.currentUser.id) {
+      newStyle = {display: 'inline'};
+    } else {
+      newStyle = {display: 'none'};
+    }
+    return newStyle;
+  }
+
   render() {
+    let stylingDisplay = this.stylingDisplay();
     return (
       <div className="user-profile">
         <div className="user-profile-header">
@@ -36,7 +48,7 @@ class UserProfile extends React.Component  {
               {this.state.username}
             </div>
             <span>
-              <button className="user-profile-upload">
+              <button className="user-profile-upload" style={stylingDisplay}>
                 Upload Profile Picture
               </button>
             </span>
