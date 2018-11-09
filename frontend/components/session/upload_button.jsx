@@ -129,7 +129,7 @@ class UploadButton extends React.Component {
                 bottom: 0,
                 margin: 'auto',
                 backgroundColor: 'rgba(89, 89, 89, 0.75)',
-                zIndex: 1,
+                zIndex: 1
               },
               content: {
                 position: 'relative',
