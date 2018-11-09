@@ -954,6 +954,23 @@ top: 24px;
   bottom: 1px;
 }
 
+.user-profile-upload {
+  position: relative;
+  bottom: 30px;
+  background: #3897f0;
+  border-color: #3897f0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 26px;
+  white-space: nowrap;
+  border-radius: 3px;
+  border-style: solid;
+  /* margin: 15px 0px; */
+  width: 190px;
+  margin-left: 73px;
+}
+
 .upload-photo-dropzone {
   // background-color: blue;
   cursor: pointer;
