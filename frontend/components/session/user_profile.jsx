@@ -133,10 +133,55 @@ class UserProfile extends React.Component  {
               {this.state.username}
             </div>
             <span>
+              <button onClick={this.openModal} className="user-profile-upload" style={stylingDisplay}>
+                Upload Profile Picture
+              </button>
+              <Modal
+                className="modal-box"
+                isOpen={this.state.modalIsOpen}
+                onAfterOpen={this.afterOpenModal}
+                onRequestClose={this.closeModal}
+                contentLabel="Example Modal"
+                style={{
+                  overlay: {
+                    position: 'fixed',
+                    overflow: 'auto',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    margin: 'auto',
+                    backgroundColor: 'rgba(89, 89, 89, 0.75)',
+                  },
+                  content: {
+                    position: 'relative',
+                    margin: '10% auto auto',
+                    border: '1px solid #e6e6e6',
+                    background: '#fff',
+                    WebkitOverflowScrolling: 'touch',
+                    borderRadius: '4px',
+                    outline: 'none',
+                    padding: '20px',
+                    marginBottom: '40px'
+                    }
+                  }
+                }
+              >
+
               <form onSubmit={this.postPhoto}>
-                <input type="submit" value="Upload Profile Picture" className="user-profile-upload" style={stylingDisplay}>
-                </input>
+                <div className="modal-photo-box">
+                  {this.renderPhoto()}
+                  <img
+                    className="modal-photo-preview"
+                    src={ this.state.img_url }
+                  />
+                </div>
+                <div className="modal-buttons">
+                  <input className="modal-submit" type="submit" value="Upload" />
+                  <button className="modal-cancel" onClick={this.cancelPhoto.bind(this)}>Cancel</button>
+                </div>
               </form>
+              </Modal>
             </span>
             <div className="user-profile-bio">
               <h4>Bio</h4>
