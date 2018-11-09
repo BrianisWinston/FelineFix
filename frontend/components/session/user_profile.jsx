@@ -152,6 +152,7 @@ class UserProfile extends React.Component  {
                     bottom: 0,
                     margin: 'auto',
                     backgroundColor: 'rgba(89, 89, 89, 0.75)',
+                    zIndex: 1
                   },
                   content: {
                     position: 'relative',
@@ -162,12 +163,13 @@ class UserProfile extends React.Component  {
                     borderRadius: '4px',
                     outline: 'none',
                     padding: '20px',
-                    marginBottom: '40px'
+                    marginBottom: '40px',
+                    height: '410px'
                     }
                   }
                 }
               >
-
+              <button className="modal-exit" onClick={this.closeModal}>{<i className="fas fa-times"></i>}</button>
               <form onSubmit={this.postPhoto}>
                 <div className="modal-photo-box">
                   {this.renderPhoto()}
