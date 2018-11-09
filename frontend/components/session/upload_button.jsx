@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
-import merge from 'lodash/merge';
 
 class UploadButton extends React.Component {
   constructor(props) {

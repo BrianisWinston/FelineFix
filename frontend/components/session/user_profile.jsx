@@ -1,4 +1,6 @@
 import React from 'react';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
 
 class UserProfile extends React.Component  {
   constructor(props) {
@@ -6,6 +8,9 @@ class UserProfile extends React.Component  {
     this.state = {
       photos: []
     }
+
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentDidMount() {
@@ -23,6 +28,84 @@ class UserProfile extends React.Component  {
       });
       console.log(newPhotos);
     });
+  }
+
+  // MODAL LOGIC--------------------------------------------------------
+  openModal() {
+    this.setState({modalIsOpen: true});
+  }
+
+  closeModal() {
+    this.setState({modalIsOpen: false});
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
+
+  postPhoto(e) {
+    e.preventDefault();
+    if (this.state.createdPhoto !== "" && this.state.caption !== "") {
+      let captionValue = this.state.caption
+      let newPhoto = { img_url: this.state.createdPhoto, caption: captionValue };
+      this.props.createPhoto(newPhoto);
+      this.closeModal();
+      this.setState({createdPhoto: "", caption: ""})
+      scrollTo(0, 0);
+    }
+  }
+
+  handleDrop(files) {
+    let file = files[0]
+    const uploadPreset = window.cloudinary_options.upload_preset;
+    const uploadUrl = `https://api.cloudinary.com/v1_1/${window.cloudinary_options.cloud_name}/image/upload`;
+
+    let upload = request.post(uploadUrl)
+                        .field('upload_preset', uploadPreset)
+                        .field('file', file);
+
+    upload.end((err, response) => {
+
+      if (err) {
+        console.error(err);
+      }
+
+      if (response.body.secure_url !== '') {
+        this.setState({
+          createdPhoto: response.body.secure_url,
+        });
+      }
+    });
+  }
+
+  renderDropzone() {
+    return (
+      <Dropzone
+        className="upload-photo-dropzone"
+        multiple={false}
+        accept="image/*"
+        onDrop={this.handleDrop}>
+        <div className="upload-photo-dropzone-content">
+          <div></div>
+          <p className="upload-photo-text">Drag over an image or click</p>
+          <p className="upload-photo-text">to select a file to upload!</p>
+        </div>
+      </Dropzone>
+    );
+  }
+
+  renderPhoto() {
+    if (this.state.createdPhoto === "") {
+      return this.renderDropzone();
+    }
+  }
+
+  cancelPhoto() {
+    this.setState({
+      createdPhoto: "",
+      caption: ""
+    })
+    this.closeModal();
   }
 
   stylingDisplay() {
