@@ -35,6 +35,11 @@ class UserProfile extends React.Component  {
             <div className="user-profile-name">
               {this.state.username}
             </div>
+            <span>
+              <button className="user-profile-upload">
+                Upload Profile Picture
+              </button>
+            </span>
             <div className="user-profile-bio">
               <h4>Bio</h4>
               <span>
