@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from 'react-modal';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
 
@@ -6,7 +7,8 @@ class UserProfile extends React.Component  {
   constructor(props) {
     super(props)
     this.state = {
-      photos: []
+      photos: [],
+      img_url: ""
     }
 
     this.openModal = this.openModal.bind(this);
@@ -45,12 +47,12 @@ class UserProfile extends React.Component  {
 
   postPhoto(e) {
     e.preventDefault();
-    if (this.state.createdPhoto !== "" && this.state.caption !== "") {
+    if (this.state.img_url !== "" && this.state.caption !== "") {
       let captionValue = this.state.caption
-      let newPhoto = { img_url: this.state.createdPhoto, caption: captionValue };
+      let newPhoto = { img_url: this.state.img_url, caption: captionValue };
       this.props.createPhoto(newPhoto);
       this.closeModal();
-      this.setState({createdPhoto: "", caption: ""})
+      this.setState({img_url: "", caption: ""})
       scrollTo(0, 0);
     }
   }
@@ -72,7 +74,7 @@ class UserProfile extends React.Component  {
 
       if (response.body.secure_url !== '') {
         this.setState({
-          createdPhoto: response.body.secure_url,
+          img_url: response.body.secure_url,
         });
       }
     });
@@ -95,14 +97,14 @@ class UserProfile extends React.Component  {
   }
 
   renderPhoto() {
-    if (this.state.createdPhoto === "") {
+    if (this.state.img_url === "") {
       return this.renderDropzone();
     }
   }
 
   cancelPhoto() {
     this.setState({
-      createdPhoto: "",
+      img_url: "",
       caption: ""
     })
     this.closeModal();
@@ -131,9 +133,10 @@ class UserProfile extends React.Component  {
               {this.state.username}
             </div>
             <span>
-              <button className="user-profile-upload" style={stylingDisplay}>
-                Upload Profile Picture
-              </button>
+              <form onSubmit={this.postPhoto}>
+                <input type="submit" value="Upload Profile Picture" className="user-profile-upload" style={stylingDisplay}>
+                </input>
+              </form>
             </span>
             <div className="user-profile-bio">
               <h4>Bio</h4>
