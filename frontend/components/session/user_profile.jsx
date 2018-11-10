@@ -28,7 +28,7 @@ class UserProfile extends React.Component  {
         photos: newPhotos,
         username: newPhotos[0].username
       });
-      console.log(newPhotos);
+      // console.log(newPhotos);
     });
   }
 
@@ -49,7 +49,7 @@ class UserProfile extends React.Component  {
     e.preventDefault();
     if (this.state.img_url !== "") {
       let newPhoto = { img_url: this.state.img_url, user_id: this.props.currentUser.id };
-      this.props.updateUserPhoto(newPhoto);
+      this.props.updateUserInfo(newPhoto);
       this.closeModal();
       this.setState({img_url: ""})
       // scrollTo(0, 0);

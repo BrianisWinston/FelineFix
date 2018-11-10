@@ -1,4 +1,4 @@
-import { postUser, postSession, deleteSession } from '../util/session';
+import { postUser, postSession, deleteSession, updateUserPhoto } from '../util/session';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
@@ -26,7 +26,8 @@ export const createNewUser = formUser => dispatch => (
 );
 
 export const login = formUser => dispatch => (
-  postSession(formUser).then(user => dispatch(receiveCurrentUser(user)),
+  postSession(formUser)
+  .then(user => dispatch(receiveCurrentUser(user)),
   err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
@@ -34,4 +35,9 @@ export const login = formUser => dispatch => (
 
 export const logout = () => dispatch => (
   deleteSession().then(() => dispatch(logoutCurrentUser()))
+);
+
+export const updateUserInfo = img => dispatch => (
+  updateUserPhoto(img)
+    .then( user => dispatch(receiveCurrentUser(user)))
 );
