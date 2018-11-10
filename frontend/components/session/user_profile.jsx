@@ -51,8 +51,8 @@ class UserProfile extends React.Component  {
       let newPhoto = { img_url: this.state.img_url, user_id: this.props.currentUser.id };
       this.props.updateUserPhoto(newPhoto);
       this.closeModal();
-      this.setState({img_url: "", caption: ""})
-      scrollTo(0, 0);
+      this.setState({img_url: ""})
+      // scrollTo(0, 0);
     }
   }
 

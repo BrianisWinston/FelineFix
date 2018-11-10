@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import User from './user_profile';
 import { fetchPhotos } from '../../actions/photo_actions';
+import { updateUserPhoto } from '../../actions/session';
 
 const mapStateToProps = (state) => {
   // let photos = [];
@@ -22,7 +23,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchPhotos: () => dispatch(fetchPhotos())
+  fetchPhotos: () => dispatch(fetchPhotos()),
+  updateUserPhoto: (img) => dispatch(updateUserPhoto(img))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(User);
