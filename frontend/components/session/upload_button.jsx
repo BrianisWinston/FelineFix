@@ -86,7 +86,7 @@ class UploadButton extends React.Component {
         accept="image/*"
         onDrop={this.handleDrop}>
         <div className="upload-photo-dropzone-content">
-          <div></div>
+          <div className="upload-photo-dropzone-content-icon"></div>
           <p className="upload-photo-text">Drag over an image or click</p>
           <p className="upload-photo-text">to select a file to upload!</p>
         </div>

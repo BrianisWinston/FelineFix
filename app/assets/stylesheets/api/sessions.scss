@@ -753,6 +753,22 @@ top: 24px;
   border: 1px solid #dbdbdb;
   // margin-left: 90px;
 }
+
+.modal-avatar-upload-text {
+  color: #262626;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+.modal-avatar-doc-icon {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-size: 100px;
+  background-image: image-url('file.png');
+  margin-bottom: 20px;
+}
 // SINGLE PHOTO MODAL --------------------------------------------------
 
 .custom-modal {
@@ -1008,7 +1024,7 @@ top: 24px;
   text-align: center;
 }
 
-.upload-photo-dropzone-content div {
+.upload-photo-dropzone-content-icon div {
   display: inline-block;
   width: 150px;
   height: 150px;
