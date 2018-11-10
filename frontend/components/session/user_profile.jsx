@@ -112,6 +112,23 @@ class UserProfile extends React.Component  {
     }
   }
 
+  renderAvatar() {
+    if (this.state.img_url === "") {
+      return (
+        <div>
+          <i className="far fa-user"></i>
+        </div>
+      )
+    } else {
+      return (
+        <img
+          className="user-profile-pic-icon"
+          src={this.state.img_url}
+        />
+      )
+    }
+  }
+
   cancelPhoto() {
     this.setState({
       img_url: ""
@@ -135,7 +152,7 @@ class UserProfile extends React.Component  {
       <div className="user-profile">
         <div className="user-profile-header">
           <div className="user-profile-pic">
-            <i className="far fa-user"></i>
+            {this.renderAvatar()}
           </div>
           <div className="user-profile-info">
             <div className="user-profile-name">

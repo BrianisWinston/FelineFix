@@ -953,12 +953,20 @@ top: 24px;
 
 .user-profile-pic {
   position: relative;
-  width: 100px;
-  height: 100px;
-  font-size: 90px;
+  /* width: 100px; */
+  /* height: 100px; */
+  /* font-size: 90px; */
   flex: 1;
   top: 20px;
   left: 45px;
+}
+
+.user-profile-pic-icon {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .user-profile-name {
