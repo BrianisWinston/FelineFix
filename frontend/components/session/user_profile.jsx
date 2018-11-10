@@ -176,7 +176,7 @@ class UserProfile extends React.Component  {
                   {this.renderPhoto()}
                   <img
                     className="modal-photo-preview"
-                    src={ this.state.img_url }
+                    src={this.state.img_url}
                   />
                 </div>
                 <div className="modal-buttons">
