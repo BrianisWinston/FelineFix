@@ -76,6 +76,7 @@ class UserProfile extends React.Component  {
           img_url: response.body.secure_url,
         });
       }
+      console.log(`this.state.img_url: ${this.state.img_url}`);
     });
   }
 
@@ -103,8 +104,7 @@ class UserProfile extends React.Component  {
 
   cancelPhoto() {
     this.setState({
-      img_url: "",
-      caption: ""
+      img_url: ""
     })
     this.closeModal();
   }
@@ -195,7 +195,7 @@ class UserProfile extends React.Component  {
         </div>
         <div className="user-profile-photos-container">
           <ul className="user-profile-photos-ul">
-              {this.state.photos.map( (photo, id) => (
+              {this.state.photos.reverse().map( (photo, id) => (
                 <li className="user-profile-photos-li" key={id}>
                   <img src={photo.img_url}/>
                 </li>
