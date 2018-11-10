@@ -102,6 +102,13 @@ class UserProfile extends React.Component  {
   renderPhoto() {
     if (this.state.img_url === "") {
       return this.renderDropzone();
+    } else {
+      return (
+        <img
+          className="modal-avatar-photo-preview"
+          src={this.state.img_url}
+        />
+      )
     }
   }
 
@@ -176,10 +183,6 @@ class UserProfile extends React.Component  {
               <form onSubmit={this.postPhoto}>
                 <div className="modal-avatar-photo-box">
                   {this.renderPhoto()}
-                  <img
-                    className="modal-photo-preview"
-                    src={this.state.img_url}
-                  />
                 </div>
                 <div className="modal-buttons">
                   <input className="modal-submit" type="submit" value="Upload" />
