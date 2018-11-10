@@ -13,6 +13,7 @@ class UserProfile extends React.Component  {
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleDrop = this.handleDrop.bind(this);
   }
 
   componentDidMount() {
