@@ -1019,12 +1019,19 @@ top: 24px;
   height: 350px;
 }
 
+.upload-avatar-photo-dropzone {
+  cursor: pointer;
+  height: 300px;
+  // background-color: blue;
+  border-radius: 50%;
+}
+
 .upload-photo-dropzone-content {
   padding-top: 55px;
   text-align: center;
 }
 
-.upload-photo-dropzone-content-icon div {
+.upload-photo-dropzone-content-icon {
   display: inline-block;
   width: 150px;
   height: 150px;

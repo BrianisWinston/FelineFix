@@ -86,7 +86,7 @@ class UserProfile extends React.Component  {
   renderDropzone() {
     return (
       <Dropzone
-        className="upload-photo-dropzone"
+        className="upload-avatar-photo-dropzone"
         multiple={false}
         accept="image/*"
         onDrop={this.handleDrop}>
