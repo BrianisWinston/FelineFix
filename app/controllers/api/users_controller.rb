@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
 
    if @user.update(
-     params.require(:user).permit(:img_url, :username, :name, :bio)
+     params.require(:user).permit(:img_url)
    )
      render :show
    else
