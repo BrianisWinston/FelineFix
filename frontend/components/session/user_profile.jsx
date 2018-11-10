@@ -16,6 +16,7 @@ class UserProfile extends React.Component  {
   }
 
   componentDidMount() {
+    console.log(`this.state.img_url === "": ${this.state.img_url === ""}`);
     let newPhotos = [];
     this.props.fetchPhotos()
     .then(data => {
@@ -77,6 +78,7 @@ class UserProfile extends React.Component  {
         });
       }
       console.log(`this.state.img_url: ${this.state.img_url}`);
+      console.log(`this.state.img_url === "": ${this.state.img_url === ""}`);
     });
   }
 
