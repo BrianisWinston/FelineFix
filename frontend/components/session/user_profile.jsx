@@ -166,14 +166,15 @@ class UserProfile extends React.Component  {
                     outline: 'none',
                     padding: '20px',
                     marginBottom: '40px',
-                    height: '410px'
+                    height: '410px',
+                    width: '300px'
                     }
                   }
                 }
               >
               <button className="modal-exit" onClick={this.closeModal}>{<i className="fas fa-times"></i>}</button>
               <form onSubmit={this.postPhoto}>
-                <div className="modal-photo-box">
+                <div className="modal-avatar-photo-box">
                   {this.renderPhoto()}
                   <img
                     className="modal-photo-preview"
@@ -182,7 +183,7 @@ class UserProfile extends React.Component  {
                 </div>
                 <div className="modal-buttons">
                   <input className="modal-submit" type="submit" value="Upload" />
-                  <button className="modal-cancel" onClick={this.cancelPhoto.bind(this)}>Cancel</button>
+                  <button className="modal-avatar-cancel" onClick={this.cancelPhoto.bind(this)}>Cancel</button>
                 </div>
               </form>
               </Modal>
