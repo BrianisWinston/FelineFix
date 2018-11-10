@@ -47,10 +47,9 @@ class UserProfile extends React.Component  {
 
   postPhoto(e) {
     e.preventDefault();
-    if (this.state.img_url !== "" && this.state.caption !== "") {
-      let captionValue = this.state.caption
-      let newPhoto = { img_url: this.state.img_url, caption: captionValue };
-      this.props.createPhoto(newPhoto);
+    if (this.state.img_url !== "") {
+      let newPhoto = { img_url: this.state.img_url, user_id: this.props.currentUser.id };
+      this.props.updateUserPhoto(newPhoto);
       this.closeModal();
       this.setState({img_url: "", caption: ""})
       scrollTo(0, 0);

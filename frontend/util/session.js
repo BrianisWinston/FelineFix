@@ -20,3 +20,12 @@ export const deleteSession = () => (
     method: 'DELETE'
   })
 );
+
+export const updateUserPhoto = (img_url) => {
+  console.log(img_url);
+  return $.ajax({
+    url: `/api/user/${ img_url.user_id }`,
+    method: 'PATCH',
+    data: img_url
+  });
+}
