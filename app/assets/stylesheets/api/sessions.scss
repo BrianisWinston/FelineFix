@@ -953,9 +953,9 @@ top: 24px;
 
 .user-profile-pic {
   position: relative;
-  /* width: 100px; */
-  /* height: 100px; */
-  /* font-size: 90px; */
+  // width: 100px;
+  // height: 100px;
+  font-size: 90px;
   flex: 1;
   top: 20px;
   left: 45px;
@@ -963,10 +963,12 @@ top: 24px;
 
 .user-profile-pic-icon {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 152px;
+  height: 152px;
   border-radius: 50%;
   object-fit: cover;
+  margin: -15px auto 5px auto;
+  border: 1px solid #e6e6e6;
 }
 
 .user-profile-name {

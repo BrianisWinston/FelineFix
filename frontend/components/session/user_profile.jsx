@@ -8,16 +8,15 @@ class UserProfile extends React.Component  {
     super(props)
     this.state = {
       photos: [],
-      img_url: ""
+      img_url: this.props.currentUser.img_url
     }
-
+    console.log(this.props.currentUser.img_url);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleDrop = this.handleDrop.bind(this);
   }
 
   componentDidMount() {
-    console.log(`this.state.img_url === "": ${this.state.img_url === ""}`);
     let newPhotos = [];
     this.props.fetchPhotos()
     .then(data => {
@@ -78,8 +77,6 @@ class UserProfile extends React.Component  {
           img_url: response.body.secure_url,
         });
       }
-      console.log(`this.state.img_url: ${this.state.img_url}`);
-      console.log(`this.state.img_url === "": ${this.state.img_url === ""}`);
     });
   }
 
