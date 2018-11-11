@@ -19,6 +19,7 @@ class UserProfile extends React.Component  {
   }
 
   componentDidMount() {
+    console.log(this.props.location);
     let newPhotos = [];
     this.props.fetchPhotos()
     .then(data => {
@@ -52,7 +53,9 @@ class UserProfile extends React.Component  {
     e.preventDefault();
     if (this.state.modalPhoto !== "") {
       let newPhoto = { img_url: this.state.modalPhoto, user_id: this.props.currentUser.id };
-      this.props.updateUserInfo(newPhoto);
+      this.props.updateUserInfo(newPhoto)
+      .then(() => this.props.history.replace(this.props.location.pathname));
+      console.log(`history: ${this.props.history}`);
       this.closeModal();
       this.setState({img_url: this.state.modalPhoto, modalPhoto: ""})
       scrollTo(0, 0);
