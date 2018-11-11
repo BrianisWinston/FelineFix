@@ -34,6 +34,8 @@ class AllPhotos extends React.Component {
     this.props.fetchPhotos();
   }
 
+  renderIcon() {
+  }
 
   render () {
     return (

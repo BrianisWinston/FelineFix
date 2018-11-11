@@ -50,7 +50,7 @@ class UserProfile extends React.Component  {
 
   postPhoto(e) {
     e.preventDefault();
-    if (this.state.img_url !== "") {
+    if (this.state.modalPhoto !== "") {
       let newPhoto = { img_url: this.state.modalPhoto, user_id: this.props.currentUser.id };
       this.props.updateUserInfo(newPhoto);
       this.closeModal();
@@ -152,6 +152,7 @@ class UserProfile extends React.Component  {
         <div className="user-profile-header">
           <div className="user-profile-pic">
             {this.renderAvatar()}
+            {console.log(this.state)}
           </div>
           <div className="user-profile-info">
             <div className="user-profile-name">
@@ -218,7 +219,9 @@ class UserProfile extends React.Component  {
         </div>
         <div className="user-profile-photos-container">
           <ul className="user-profile-photos-ul">
-              {this.state.photos.reverse().map( (photo, id) => (
+              {this.state.photos
+                .sort((a, b) => b.id - a.id)
+                .map( (photo, id) => (
                 <li className="user-profile-photos-li" key={id}>
                   <img src={photo.img_url}/>
                 </li>
