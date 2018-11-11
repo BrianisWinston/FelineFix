@@ -8,7 +8,8 @@ class UserProfile extends React.Component  {
     super(props)
     this.state = {
       photos: [],
-      img_url: this.props.currentUser.img_url
+      img_url: this.props.currentUser.img_url,
+      modalPhoto: ""
     }
     console.log(this.props.currentUser.img_url);
     this.openModal = this.openModal.bind(this);
@@ -50,11 +51,11 @@ class UserProfile extends React.Component  {
   postPhoto(e) {
     e.preventDefault();
     if (this.state.img_url !== "") {
-      let newPhoto = { img_url: this.state.img_url, user_id: this.props.currentUser.id };
+      let newPhoto = { img_url: this.state.modalPhoto, user_id: this.props.currentUser.id };
       this.props.updateUserInfo(newPhoto);
       this.closeModal();
-      this.setState({img_url: ""})
-      // scrollTo(0, 0);
+      this.setState({img_url: this.state.modalPhoto, modalPhoto: ""})
+      scrollTo(0, 0);
     }
   }
 
@@ -75,7 +76,7 @@ class UserProfile extends React.Component  {
 
       if (response.body.secure_url !== '') {
         this.setState({
-          img_url: response.body.secure_url,
+          modalPhoto: response.body.secure_url,
         });
       }
     });
@@ -98,13 +99,13 @@ class UserProfile extends React.Component  {
   }
 
   renderPhoto() {
-    if (this.state.img_url === "") {
+    if (this.state.modalPhoto === "") {
       return this.renderDropzone();
     } else {
       return (
         <img
           className="modal-avatar-photo-preview"
-          src={this.state.img_url}
+          src={this.state.modalPhoto}
         />
       )
     }
