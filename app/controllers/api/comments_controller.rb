@@ -1,15 +1,13 @@
 class Api::CommentsController < ApplicationController
-  before_action :require_login
-
   def index
-    puts "id #{params[:photo_id]}"
+    # puts "id #{params[:photo_id]}"
     @photo = Photo.find(params[:photo_id])
     @comments = @photo.comments
     @comments.each do |comment|
-      puts comment.id
-      puts comment.photo_id
-      puts comment.user_id
-      puts comment.body
+      # puts comment.id
+      # puts comment.photo_id
+      # puts comment.user_id
+      # puts comment.body
     end
   end
 

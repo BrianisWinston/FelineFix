@@ -1,6 +1,4 @@
 class Api::PhotosController < ApplicationController
-  before_action :require_login
-
   def index
     cloud_name = ENV['CLOUD_NAME']
     upload_preset = ENV['UPLOAD_PRESET']

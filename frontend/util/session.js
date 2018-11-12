@@ -24,7 +24,7 @@ export const deleteSession = () => (
 export const updateUserPhoto = (img_url) => {
   console.log(img_url);
   return $.ajax({
-    url: `/api/users/${ img_url.user_id }`,
+    url: `/api/users/${img_url.user_id}`,
     method: 'PATCH',
     data: {"user": img_url}
   });
