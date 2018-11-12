@@ -11,7 +11,7 @@ class UserProfile extends React.Component  {
       img_url: this.props.currentUser.img_url,
       modalPhoto: ""
     }
-    console.log(this.props.currentUser.img_url);
+    // console.log(this.props.currentUser.img_url);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleDrop = this.handleDrop.bind(this);
@@ -19,7 +19,8 @@ class UserProfile extends React.Component  {
   }
 
   componentDidMount() {
-    console.log(this.props.location);
+    // console.log(this.props.location);
+    console.log(this.props.currentUser);
     let newPhotos = [];
     this.props.fetchPhotos()
     .then(data => {
@@ -155,7 +156,6 @@ class UserProfile extends React.Component  {
         <div className="user-profile-header">
           <div className="user-profile-pic">
             {this.renderAvatar()}
-            {console.log(this.state)}
           </div>
           <div className="user-profile-info">
             <div className="user-profile-name">
