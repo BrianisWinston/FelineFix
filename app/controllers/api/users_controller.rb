@@ -16,6 +16,8 @@ class Api::UsersController < ApplicationController
    if @user.update(
      params.require(:user).permit(:img_url)
    )
+   login(@user)
+   puts params.require(:user).permit(:img_url)
      render "api/users/show"
    else
      render json: @user.errors.full_messages, status: 422
