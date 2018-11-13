@@ -500,7 +500,7 @@ top: 24px;
 
 .photo-user {
   float: right;
-  top: 4px;
+  top: 5px;
   position: relative;
 }
 
@@ -508,6 +508,7 @@ top: 24px;
   font-weight: bold;
   font-size: 14px;
   letter-spacing: 1px;
+  color: #262626;
 }
 
 .photo-whole {
@@ -525,11 +526,11 @@ top: 24px;
 
 .photo-user-avatar {
   position: relative;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   object-fit: cover;
-  margin: -4px 5px 5px auto;
+  margin: 0px 5px 5px 4px;
   border: 1px solid #e6e6e6;
 }
 
