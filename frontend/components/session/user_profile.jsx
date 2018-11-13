@@ -8,7 +8,7 @@ class UserProfile extends React.Component  {
     super(props)
     this.state = {
       photos: [],
-      img_url: this.props.currentUser.img_url,
+      img_url: "",
       modalPhoto: ""
     }
     // console.log(this.props.currentUser.img_url);
@@ -19,7 +19,6 @@ class UserProfile extends React.Component  {
   }
 
   componentDidMount() {
-    // console.log(this.props.location);
     let newPhotos = [];
     this.props.fetchPhotos()
     .then(data => {
@@ -30,9 +29,9 @@ class UserProfile extends React.Component  {
       });
       this.setState({
         photos: newPhotos,
-        username: newPhotos[0].username
+        username: newPhotos[0].username,
+        img_url: newPhotos[0].avatar_icon
       });
-      // console.log(newPhotos);
     });
   }
 
