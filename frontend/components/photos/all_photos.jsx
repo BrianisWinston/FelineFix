@@ -45,7 +45,7 @@ class AllPhotos extends React.Component {
     } else {
       return (
         <img
-          className="user-profile-pic-icon"
+          className="photo-user-avatar"
           src={photo.avatar_icon}
         />
       )
