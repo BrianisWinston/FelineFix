@@ -504,6 +504,12 @@ top: 24px;
   position: relative;
 }
 
+.photo-user a {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
 .photo-whole {
   padding-top: 75px;
 }
@@ -519,11 +525,11 @@ top: 24px;
 
 .photo-user-avatar {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   object-fit: cover;
-  margin: -15px auto 5px auto;
+  margin: -4px 5px 5px auto;
   border: 1px solid #e6e6e6;
 }
 
