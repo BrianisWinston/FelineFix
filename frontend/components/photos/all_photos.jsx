@@ -18,6 +18,7 @@ class AllPhotos extends React.Component {
     };
 
     this.onCloseModal = this.onCloseModal.bind(this);
+    this.renderAvatar = this.renderAvatar.bind(this);
   }
 
   onOpenModal(photo) {
@@ -34,8 +35,23 @@ class AllPhotos extends React.Component {
     this.props.fetchPhotos();
   }
 
-  renderIcon() {
+  renderAvatar(photo) {
+    if (photo.avatar_icon === "") {
+      return (
+        <div>
+          <i className="far fa-user"></i>
+        </div>
+      )
+    } else {
+      return (
+        <img
+          className="user-profile-pic-icon"
+          src={photo.avatar_icon}
+        />
+      )
+    }
   }
+
 
   render () {
     return (
@@ -51,13 +67,12 @@ class AllPhotos extends React.Component {
                   <div className="photo-header">
                     <div className="photo-header-info">
                       <div className="photo-user-icon">
-                        <i className="far fa-user"></i>
+                        {this.renderAvatar(photo)}
                       </div>
                       <div className="photo-user">
                         <Link to={`/${photo.user_id}`}>
                           { photo.username }
                         </Link>
-
                       </div>
 
                     </div>
