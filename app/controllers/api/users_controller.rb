@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
    if @user.update(
      params.require(:user).permit(:img_url)
    )
-   login(@user)
+   # login(@user)
    puts params.require(:user).permit(:img_url)
      render "api/users/show"
    else
